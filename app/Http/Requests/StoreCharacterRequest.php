@@ -22,31 +22,35 @@ class StoreCharacterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
 
             'name' => 'required| max:200',
             'description' => 'nullable',
-            'type_id'=>'required',
-            'attack'=>'required',
-            'defence'=> 'required',
-            'speed'=> 'required',
-            'life'=> 'required'
+            'type_id' => 'required|numeric',
+            'attack' => 'required|numeric',
+            'defence' => 'required|numeric',
+            'speed' => 'required|numeric',
+            'life' => 'required|numeric'
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
 
         return [
-            //
 
             'name.required' => 'Il campo nome è richiesto',
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
-            'description' => 'Il campo descrizione deve essere obbligatorio',
-            'type_id'=>'Il campo type_id deve essere obbligatorio',
-            'attack'=>'Il campo attacco deve essere obbligatorio',
-            'defence'=> 'Il campo difesa deve essere obbligatorio',
-            'speed'=> 'Il campo velocità deve essere obbligatorio',
-            'life'=> 'Il campo valore vita deve essere obbligatorio'
+            'type_id.required' => 'Il campo type_id deve essere obbligatorio',
+            'type_id.numeric' => 'Il valore inserito deve essere un numero',
+            'attack.required' => 'Il campo attacco deve essere obbligatorio',
+            'attack.numeric' => 'Il valore inserito deve essere un numero',
+            'defence.required' => 'Il campo difesa deve essere obbligatorio',
+            'defense.numeric' => 'Il valore inserito deve essere un numero',
+            'speed.required' => 'Il campo velocità deve essere obbligatorio',
+            'speed.numeric' => 'Il valore inserito deve essere un numero',
+            'life.required' => 'Il campo valore vita deve essere obbligatorio',
+            'life.numeric' => 'Il valore inserito deve essere un numero',
+
         ];
     }
 }
