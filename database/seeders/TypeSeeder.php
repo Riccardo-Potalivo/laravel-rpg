@@ -21,6 +21,7 @@ class TypeSeeder extends Seeder
             $newType = new Type();
             $newType  -> name = $value["name"];
             $newType  -> desc = $value["desc"];
+            $newType ->save();
         }
     }
 }
