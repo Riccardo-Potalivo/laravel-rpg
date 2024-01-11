@@ -17,11 +17,11 @@ class TypeSeeder extends Seeder
         $json = file_get_contents(__DIR__ . '/data/types.json');
         $content = json_decode($json, true);
 
-        foreach($content as $value){
+        foreach ($content as $value) {
             $newType = new Type();
-            $newType  -> name = $value["name"];
-            $newType  -> desc = $value["desc"];
-            $newType ->save();
+            $newType->name = $value["name"];
+            $newType->description = $value["desc"];
+            $newType->save();
         }
     }
 }
