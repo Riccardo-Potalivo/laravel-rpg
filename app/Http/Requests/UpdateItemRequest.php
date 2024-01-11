@@ -42,10 +42,15 @@ class UpdateItemRequest extends FormRequest
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
             // 'description' => 'Il campo descrizione deve essere obbligatorio',
             'slug'=>'Il campo slug deve essere obbligatorio',
+            'slug.max'=>'Il campo slug deve avere massimo :max caratteri',
             'category'=>'Il campo categoria deve essere obbligatorio',
+            'category.max'=>'Il campo categoria deve avere massimo :max caratteri',
             'type'=> 'Il campo tipo deve essere obbligatorio',
+            'type.max'=>'Il campo tipo deve avere massimo :max caratteri',
             'weight'=> 'Il campo peso deve essere obbligatorio',
-            'cost'=> 'Il campo costo vita deve essere obbligatorio'
+            'weight.max'=>'Il campo peso deve avere massimo :max caratteri',
+            'cost'=> 'Il campo costo deve essere obbligatorio',
+            'cost.max'=>'Il campo costo deve avere massimo :max caratteri',
         ];
     }
 }
