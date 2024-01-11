@@ -1,0 +1,209 @@
+[
+    {
+        "name": "Lancelot",
+        "description": "Valiant knight with a noble heart",
+        "type_id": 1,
+        "attack": 85,
+        "defence": 75,
+        "speed": 60,
+        "life": 110
+      },
+      {
+        "name": "Morgana",
+        "description": "Enchanting sorceress skilled in arcane arts",
+        "type_id": 2,
+        "attack": 70,
+        "defence": 55,
+        "speed": 75,
+        "life": 90
+      },
+      {
+        "name": "Robin Hood",
+        "description": "Legendary archer and defender of the poor",
+        "type_id": 3,
+        "attack": 75,
+        "defence": 60,
+        "speed": 80,
+        "life": 95
+      },
+      {
+        "name": "Conan",
+        "description": "Mighty barbarian wielding a massive sword",
+        "type_id": 4,
+        "attack": 90,
+        "defence": 70,
+        "speed": 65,
+        "life": 120
+      },
+      {
+        "name": "Silent Shadow",
+        "description": "Stealthy assassin moving like a whisper",
+        "type_id": 5,
+        "attack": 80,
+        "defence": 50,
+        "speed": 90,
+        "life": 85
+      },
+      {
+        "name": "Sir Galahad",
+        "description": "Chivalrous paladin dedicated to justice",
+        "type_id": 6,
+        "attack": 85,
+        "defence": 80,
+        "speed": 55,
+        "life": 115
+      },
+      {
+        "name": "Pyro Mage",
+        "description": "Elementalist wielding the power of fire",
+        "type_id": 7,
+        "attack": 75,
+        "defence": 65,
+        "speed": 70,
+        "life": 100
+      },
+      {
+        "name": "Bardic Minstrel",
+        "description": "Talented bard and musical virtuoso",
+        "type_id": 8,
+        "attack": 65,
+        "defence": 50,
+        "speed": 85,
+        "life": 95
+      },
+      {
+        "name": "Necro Lord",
+        "description": "Master of the undead and dark arts",
+        "type_id": 9,
+        "attack": 80,
+        "defence": 55,
+        "speed": 75,
+        "life": 105
+      },
+      {
+        "name": "Shadow Monk",
+        "description": "Disciplined monk skilled in shadow combat",
+        "type_id": 10,
+        "attack": 70,
+        "defence": 65,
+        "speed": 80,
+        "life": 100
+      },
+      {
+        "name": "Hawkeye",
+        "description": "Deadly sniper with unmatched accuracy",
+        "type_id": 11,
+        "attack": 85,
+        "defence": 60,
+        "speed": 70,
+        "life": 95
+      },
+      {
+        "name": "Nature's Guardian",
+        "description": "Druid protecting the balance of nature",
+        "type_id": 12,
+        "attack": 75,
+        "defence": 70,
+        "speed": 65,
+        "life": 105
+      },
+      {
+        "name": "Daring Swashbuckler",
+        "description": "Acrobatic rogue daring in swordplay",
+        "type_id": 13,
+        "attack": 80,
+        "defence": 55,
+        "speed": 75,
+        "life": 90
+      },
+      {
+        "name": "Inventor Tinker",
+        "description": "Innovative tinkerer creating unique gadgets",
+        "type_id": 14,
+        "attack": 70,
+        "defence": 65,
+        "speed": 80,
+        "life": 95
+      },
+      {
+        "name": "Dark Warlock",
+        "description": "Cunning warlock manipulating dark forces",
+        "type_id": 15,
+        "attack": 85,
+        "defence": 50,
+        "speed": 90,
+        "life": 100
+      },
+      {
+        "name": "Potion Alchemist",
+        "description": "Alchemy expert brewing potent potions",
+        "type_id": 16,
+        "attack": 75,
+        "defence": 60,
+        "speed": 75,
+        "life": 105
+      },
+      {
+        "name": "Arena Gladiator",
+        "description": "Fierce gladiator dominating the arena",
+        "type_id": 17,
+        "attack": 90,
+        "defence": 70,
+        "speed": 65,
+        "life": 110
+      },
+      {
+        "name": "Arcane Archmage",
+        "description": "Mystical archmage wielding powerful spells",
+        "type_id": 18,
+        "attack": 80,
+        "defence": 75,
+        "speed": 60,
+        "life": 115
+      },
+      {
+        "name": "Sea Marauder",
+        "description": "Dreaded marauder terrorizing the high seas",
+        "type_id": 19,
+        "attack": 85,
+        "defence": 60,
+        "speed": 70,
+        "life": 105
+      },
+      {
+        "name": "Swift Rogue",
+        "description": "Agile rogue moving with lightning speed",
+        "type_id": 20,
+        "attack": 75,
+        "defence": 65,
+        "speed": 80,
+        "life": 100
+      },
+      {
+        "name": "Illusionist Trickster",
+        "description": "Mysterious illusionist and master trickster",
+        "type_id": 21,
+        "attack": 80,
+        "defence": 55,
+        "speed": 75,
+        "life": 90
+      },
+      {
+        "name": "Secret Agent",
+        "description": "Sly spy with a network of covert operations",
+        "type_id": 22,
+        "attack": 70,
+        "defence": 50,
+        "speed": 85,
+        "life": 95
+      },
+      {
+        "name": "Warlord Commander",
+        "description": "Tactical warlord leading armies to victory",
+        "type_id": 23,
+        "attack": 85,
+        "defence": 70,
+        "speed": 65,
+        "life": 110
+      }
+]
