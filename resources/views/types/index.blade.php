@@ -4,8 +4,8 @@
 @section('content')
     <main>
         <div class="container">
-            <h1>
-                types
+            <h1 class="py-4">
+                Types
             </h1>
 
             <div class="row">
@@ -19,12 +19,15 @@
                 @endforelse --}}
                 @forelse ($types as $type)
                 <div class="col-12 col-md-3 col-lg-4">
-                    <div class="card">
+                    <div class="card mb-3 ">
                         {{-- <img src="{{ $character->image }}" alt="{{ $character->name }}"> --}}
                         <div class="card-body">
-                            <h5>{{ $type->name }}</h5>
-                            <div>{{ $type->description }}</div>
-
+                            <a href="{{route('types.show',$type->id)}}">
+                                <h5>
+                                    {{ $type->name }}
+                                </h5>
+                            </a>
+                            <div>{{ substr($type->description,0,100)."..." }}</div>
                         </div>
                     </div>
                 </div>
