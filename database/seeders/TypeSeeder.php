@@ -20,7 +20,7 @@ class TypeSeeder extends Seeder
         foreach($content as $value){
             $newType = new Type();
             $newType  -> name = $value["name"];
-            $newType  -> description = $value["description"];
+            $newType  -> desc = $value["desc"];
         }
     }
 }
