@@ -43,8 +43,33 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        {{-- Daniele: ho commentato il link home originario in caso volessimo mantenere la dicitura --}}
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
+                                href="{{ route('home') }}">
+                                {{ __('Home') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteName() == 'characters.index' ? 'active' : '' }}"
+                                href="{{ route('characters.index') }}">
+                                {{ __('Characters') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteName() == 'types.index' ? 'active' : '' }}"
+                                href="{{ route('types.index') }}">
+                                {{ __('Types') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteName() == 'items.index' ? 'active' : '' }}"
+                                href="{{ route('items.index') }}">
+                                {{ __('Items') }}
+                            </a>
                         </li>
                     </ul>
 
