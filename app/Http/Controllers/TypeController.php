@@ -39,7 +39,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        return view('types.show', compact('type'));
     }
 
     /**
