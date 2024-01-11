@@ -12,7 +12,10 @@
                     <div class="card">
                         {{-- <img src="{{ $character->image }}" alt="{{ $character->name }}"> --}}
                         <div class="card-body">
-                            <h5>{{ $item->name }}</h5>
+                            <h5><a href="{{ route('items.show', $item->id) }}">
+                                    {{ $item->name }}
+                                </a></h5>
+
                             <div>{{ $item->slug }}</div>
 
                             <div>Type: {{ $item->type }}
