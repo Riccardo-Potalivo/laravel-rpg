@@ -13,7 +13,7 @@ class CharacterSeeder extends Seeder
      */
     public function run(): void
     {
-        $json = file_get_contents(__DIR__ . 'data/characters.json');
+        $json = file_get_contents(__DIR__ . '/data/characters.json');
         $data = json_decode($json, true);
 
         foreach ($data as $item) {
