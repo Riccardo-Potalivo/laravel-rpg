@@ -11,7 +11,7 @@ class ItemSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         $json = file_get_contents(__DIR__ . '/data/items.json');
         $items = json_decode($json, true);
