@@ -14,7 +14,7 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         //
-        $json = file_get_contents(__DIR__ . 'data/types.json');
+        $json = file_get_contents(__DIR__ . '/data/types.json');
         $content = json_decode($json, true);
 
         foreach($content as $value){
