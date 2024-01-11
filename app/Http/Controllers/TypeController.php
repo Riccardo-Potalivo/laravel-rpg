@@ -12,7 +12,10 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $type = Type::all();
+
+        return view('types.index', compact('type'));
+
     }
 
     /**
