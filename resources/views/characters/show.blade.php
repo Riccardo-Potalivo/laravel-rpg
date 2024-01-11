@@ -9,15 +9,21 @@
                 <div class="col-12 col-lg-4">
                     <div class="img-box">
                         {{-- <img src="{{ $character->image }}" alt="{{ $character->name }}"> --}}
-
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-8">
-                    <h1>{{ $character->name }}</h1>
+                    <div class="d-flex align-items-center">
+                        <h1>{{ $character->name }}</h1>
+                        {{-- bottone di edit --}}
+                        <a href="{{route('characters.edit', $character->id)}}">
+                            <button class="btn btn-success rounded-3 border-0 mx-5">
+                                <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
+                            </button>
+                        </a>
+                    </div>
+
                     <h4 class="text-uppercase me-3">Type: {{ $character->type_id }}</h4>
-
-
                     <div class="mb-3">ATT:{{ $character->attack }} - DEF:{{ $character->defence }}</div>
                     <div class="mb-3">SPEED:{{ $character->speed }} - LIFE: {{ $character->life }}</div>
                     <h4>Description</h4>
