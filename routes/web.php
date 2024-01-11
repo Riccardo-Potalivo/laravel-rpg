@@ -23,11 +23,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('comics', ItemController::class);
+Route::resource('items', ItemController::class);
 
-Route::resource('comics', TypeController::class);
+Route::resource('types', TypeController::class);
 
-Route::resource('comics', CharacterController::class);
+Route::resource('characters', CharacterController::class);
 
 // Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
 //     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
