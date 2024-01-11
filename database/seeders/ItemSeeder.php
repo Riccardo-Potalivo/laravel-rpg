@@ -19,7 +19,7 @@ class ItemSeeder extends Seeder
         foreach ($items as $itemData) {
             $item = new Item();
             $item->name = $itemData['name'];
-            $item->description = $itemData['description'];
+            // $item->description = $itemData['description'];
             $item->slug = $itemData['slug'];
             $item->category = $itemData['category'];
             $item->type = $itemData['type'];
