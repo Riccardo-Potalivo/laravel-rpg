@@ -59,20 +59,20 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::currentRouteName() == 'characters.index' ? 'active' : '' }}"
-                                href="{{ route('characters.index') }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'admin.characters.index' ? 'active' : '' }}"
+                                href="{{ route('admin.characters.index') }}">
                                 {{ __('Characters') }}
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::currentRouteName() == 'types.index' ? 'active' : '' }}"
-                                href="{{ route('types.index') }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'admin.types.index' ? 'active' : '' }}"
+                                href="{{ route('admin.types.index') }}">
                                 {{ __('Types') }}
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::currentRouteName() == 'items.index' ? 'active' : '' }}"
-                                href="{{ route('items.index') }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'admin.items.index' ? 'active' : '' }}"
+                                href="{{ route('admin.items.index') }}">
                                 {{ __('Items') }}
                             </a>
                         </li>

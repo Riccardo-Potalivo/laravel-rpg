@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Character;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
+use App\Http\Controllers\Controller;
 
 class CharacterController extends Controller
 {
@@ -16,7 +17,7 @@ class CharacterController extends Controller
     {
         $characters = Character::all();
 
-        return view('characters.index', compact('characters'));
+        return view('admin.characters.index', compact('characters'));
     }
 
     /**
@@ -25,7 +26,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('characters.create');
+        return view('admin.characters.create');
     }
 
     /**
@@ -40,7 +41,7 @@ class CharacterController extends Controller
 
         $newCharacter = Character::create($formData);
 
-        return to_route('characters.show', $newCharacter->id);
+        return to_route('admin.characters.show', $newCharacter->id);
     }
 
     /**
@@ -52,7 +53,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        return view('characters.show', compact('character'));
+        return view('admin.characters.show', compact('character'));
     }
 
     /**
@@ -63,7 +64,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        return view('characters.edit', compact('character'));
+        return view('admin.characters.edit', compact('character'));
     }
 
     /**
@@ -82,7 +83,7 @@ class CharacterController extends Controller
 
         $character->update();
 
-        return to_route('characters.show', $character->id);
+        return to_route('admin.characters.show', $character->id);
     }
 
     /**
@@ -95,6 +96,6 @@ class CharacterController extends Controller
     {
         $character->delete();
 
-        return to_route('characters.index')->with('message', "il prodotto $character->title è stato eliminato");
+        return to_route('admin.characters.index')->with('message', "il prodotto $character->title è stato eliminato");
     }
 }

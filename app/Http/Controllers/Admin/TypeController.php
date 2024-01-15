@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
+use App\Http\Controllers\Controller;
 
 class TypeController extends Controller
 {
@@ -16,7 +17,7 @@ class TypeController extends Controller
     {
         $types = Type::all();
 
-        return view('types.index', compact('types'));
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -25,7 +26,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('types.create');
+        return view('admin.types.create');
     }
 
     /**
@@ -40,7 +41,7 @@ class TypeController extends Controller
 
         $newType = Type::create($formData);
 
-        return to_route('types.show', $newType->id);
+        return to_route('admin.types.show', $newType->id);
     }
 
     /**
@@ -52,7 +53,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        return view('types.show', compact('type'));
+        return view('admin.types.show', compact('type'));
     }
 
     /**
@@ -63,7 +64,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        return view('types.edit', compact('type'));
+        return view('admin.types.edit', compact('type'));
     }
 
     /**
@@ -82,7 +83,7 @@ class TypeController extends Controller
 
         $type->update();
 
-        return to_route('types.show', $type->id);
+        return to_route('admin.types.show', $type->id);
     }
 
     /**
@@ -95,6 +96,6 @@ class TypeController extends Controller
     {
         $type->delete();
 
-        return to_route('types.index')->with('message', "il prodotto $type->title è stato eliminato");
+        return to_route('admin.types.index')->with('message', "il prodotto $type->title è stato eliminato");
     }
 }
