@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+
 
 class TypeController extends Controller
 {
@@ -38,7 +40,10 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $formData = $request->validated();
-
+        if ($request->hasFile('image')) {
+            $image = Storage::put('type_image', $formData['image']);
+            $formData['image'] = $image;
+        }
         $newType = Type::create($formData);
 
         return to_route('admin.types.show', $newType->id);
@@ -79,6 +84,15 @@ class TypeController extends Controller
     {
         $formData = $request->validated();
 
+
+        if ($request->hasFile('image')) {
+            if($type->image){
+                Storage::delete($type->image);
+            }
+            $image = Storage::put('type_image', $formData['image']);
+            $formData['image'] = $image;
+        }
+
         $type->fill($formData);
 
         $type->update();
@@ -94,6 +108,10 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
+
+        if($type->image){
+            Storage::delete($type->image);
+        }
         $type->delete();
 
         return to_route('admin.types.index')->with('message', "il prodotto $type->title è stato eliminato");

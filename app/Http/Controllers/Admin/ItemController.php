@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
@@ -38,6 +39,11 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
         $formData = $request->validated();
+        if ($request->hasFile('image')) {
+            $image = Storage::put('item_image', $formData['image']);
+            $formData['image'] = $image;
+        }
+
 
         $newItem = Item::create($formData);
 
@@ -78,6 +84,13 @@ class ItemController extends Controller
     public function update(UpdateItemRequest $request, Item $item)
     {
         $formData = $request->validated();
+        if ($request->hasFile('image')) {
+            if($item->image){
+                Storage::delete($item->image);
+            }
+            $image = Storage::put('item_image', $formData['image']);
+            $formData['image'] = $image;
+        }
 
         $item->fill($formData);
 
@@ -94,6 +107,9 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
+        if($item->image){
+            Storage::delete($item->image);
+        }
         $item->delete();
 
         return to_route('admin.items.index')->with('message', "il prodotto $item->title è stato eliminato");

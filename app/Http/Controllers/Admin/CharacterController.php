@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class CharacterController extends Controller
 {
@@ -27,6 +28,7 @@ class CharacterController extends Controller
     public function create()
     {
         return view('admin.characters.create');
+
     }
 
     /**
@@ -38,6 +40,10 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
+        if ($request->hasFile('image')) {
+            $image = Storage::put('character_image', $formData['image']);
+            $formData['image'] = $image;
+        }
 
         $newCharacter = Character::create($formData);
 
@@ -78,6 +84,13 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         $formData = $request->validated();
+        if ($request->hasFile('image')) {
+            if($character->image){
+                Storage::delete($character->image);
+            }
+            $image = Storage::put('character_image', $formData['image']);
+            $formData['image'] = $image;
+        }
 
         $character->fill($formData);
 
@@ -94,6 +107,9 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
+        if($character->image){
+            Storage::delete($character->image);
+        }
         $character->delete();
 
         return to_route('admin.characters.index')->with('message', "il prodotto $character->title è stato eliminato");
