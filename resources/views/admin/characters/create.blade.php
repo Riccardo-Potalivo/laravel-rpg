@@ -19,7 +19,7 @@
                     @endif
 
                     <div class="card p-2">
-                        <form action="{{ route('admin.characters.store') }}" method="POST">
+                        <form action="{{ route('admin.characters.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
@@ -46,7 +46,7 @@
                                 <label for="type_id" class="form-label">Type id</label>
 
                                 <input type="text" id="type_id" name="type_id" value="{{ old('type_id') }}"
-                                    class="form-control @error('type_id') is-invalid @enderror" >
+                                    class="form-control @error('type_id') is-invalid @enderror">
                                 @error('type_id')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -56,7 +56,7 @@
                                 <label for="attack" class="form-label">Attack</label>
 
                                 <input type="text" id="attack" name="attack" value="{{ old('attack') }}"
-                                    class="form-control @error('attack') is-invalid @enderror" >
+                                    class="form-control @error('attack') is-invalid @enderror">
                                 @error('attack')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -66,7 +66,7 @@
                                 <label for="defence" class="form-label">Defence</label>
 
                                 <input type="text" id="defence" name="defence" value="{{ old('defence') }}"
-                                    class="form-control @error('defence') is-invalid @enderror" >
+                                    class="form-control @error('defence') is-invalid @enderror">
                                 @error('defence')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -76,7 +76,7 @@
                                 <label for="speed" class="form-label">Speed</label>
 
                                 <input type="text" id="speed" name="speed" value="{{ old('speed') }}"
-                                    class="form-control @error('speed') is-invalid @enderror" >
+                                    class="form-control @error('speed') is-invalid @enderror">
                                 @error('speed')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -90,6 +90,20 @@
                                 @error('life')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <img id="image-preview" width="100" src="https://via.placeholder.com/300x200">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image">Image</label>
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                        name="image" id="image" value="{{ old('image') }}">
+                                    @error('image')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>

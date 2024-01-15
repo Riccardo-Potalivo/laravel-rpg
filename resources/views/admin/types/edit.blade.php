@@ -19,7 +19,8 @@
                     @endif
 
                     <div class="card p-2">
-                        <form action="{{ route('admin.types.update', $type->id) }}" method="POST">
+                        <form action="{{ route('admin.types.update', $type->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -45,11 +46,26 @@
                                 @enderror
                             </div>
 
+                            <div class="d-flex">
+                                <div class="media me-4">
+                                    <img class="shadow" width="150" src="{{ asset('storage/' . $types->image) }}"
+                                        alt="{{ $types->title }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image">Image</label>
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                        name="image" id="image" value="{{ old('image') }}">
+                                    @error('image')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <button type="reset" class="btn btn-secondary">Reset</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#delete_button">Delete</button>
+                                data-bs-target="#delete_button">Delete</button>
                         </form>
                     </div>
                 </div>
@@ -64,7 +80,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Cliccando su confirm eliminerai {{$type->name}}. Sei sicuro?
+                            Cliccando su confirm eliminerai {{ $type->name }}. Sei sicuro?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
