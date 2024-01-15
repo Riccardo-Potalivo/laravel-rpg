@@ -10,7 +10,7 @@
                         {{ $item->name }}
                     </h3>
                     {{-- bottone di edit --}}
-                    <a href="{{route('items.edit', $item->id)}}">
+                    <a href="{{route('admin.items.edit', $item->id)}}">
                         <button class="btn btn-success rounded-3 border-0">
                             <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                         </button>

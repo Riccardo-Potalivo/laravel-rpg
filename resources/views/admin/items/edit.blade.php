@@ -3,11 +3,11 @@
 @section('content')
     <main>
 
-        <div id="create-characters">
+        <div id="create-items">
 
             <div class="container">
                 <div class="py-5">
-                    <h2>Update {{ $character->name }}</h2>
+                    <h2>Update {{ $item->name }}</h2>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -19,83 +19,83 @@
                     @endif
 
                     <div class="card p-2">
-                        <form action="{{ route('characters.update', $character->id) }}" method="POST">
+                        <form action="{{ route('admin.items.update', $item->id) }}" method="POST">
                             @csrf
                             @method('PUT')
+
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
                                     id="name" name="name"
-                                    value="@error('name'){{ old('name') }}@else{{ $character->name }}@enderror" required>
+                                    value="@error('name'){{ old('name') }}@else{{ $item->name }}@enderror" required>
                                 @error('name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
-
+                            {{--
                             <div class="mb-3">
                                 <label for="description" class="form-label" rows="10">Description</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">
-@error('description')
-{{ old('description') }}@else{{ $character->description }}
-@enderror
-</textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                                    value="{{ old('description') }}">
+
+                                </textarea>
                                 @error('description')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div> --}}
 
                             <div class="mb-3">
-                                <label for="type_id" class="form-label">Type id</label>
+                                <label for="slug" class="form-label">Slug</label>
 
-                                <input type="text" id="type_id" name="type_id"
-                                    value="@error('type_id'){{ old('type_id') }}@else{{ $character->type_id }}@enderror"
-                                    class="form-control @error('type_id') is-invalid @enderror" required>
-                                @error('type_id')
+                                <input type="text" id="slug" name="slug"
+                                    value="@error('slug'){{ old('slug') }}@else{{ $item->slug }}@enderror"
+                                    class="form-control @error('slug') is-invalid @enderror" required>
+                                @error('slug')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
                             <div class="mb-3">
-                                <label for="attack" class="form-label">Attack</label>
+                                <label for="category" class="form-label">Category</label>
 
-                                <input type="text" id="attack" name="attack"
-                                    value="@error('attack'){{ old('attack') }}@else{{ $character->attack }}@enderror"
-                                    class="form-control @error('attack') is-invalid @enderror" required>
-                                @error('attack')
+                                <input type="text" id="category" name="category"
+                                    value="@error('category'){{ old('category') }}@else{{ $item->category }}@enderror"
+                                    class="form-control @error('category') is-invalid @enderror" required>
+                                @error('category')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
                             <div class="mb-3">
-                                <label for="defence" class="form-label">Defence</label>
+                                <label for="type" class="form-label">Type</label>
 
-                                <input type="text" id="defence" name="defence"
-                                    value="@error('defence'){{ old('defence') }}@else{{ $character->defence }}@enderror"
-                                    class="form-control @error('defence') is-invalid @enderror" required>
-                                @error('defence')
+                                <input type="text" id="type" name="type"
+                                    value="@error('type'){{ old('type') }}@else{{ $item->type }}@enderror"
+                                    class="form-control @error('type') is-invalid @enderror" required>
+                                @error('type')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
                             <div class="mb-3">
-                                <label for="speed" class="form-label">Speed</label>
+                                <label for="weight" class="form-label">Weight</label>
 
-                                <input type="text" id="speed" name="speed"
-                                    value="@error('speed'){{ old('speed') }}@else{{ $character->speed }}@enderror"
-                                    class="form-control @error('speed') is-invalid @enderror" required>
-                                @error('speed')
+                                <input type="text" id="weight" name="weight"
+                                    value="@error('weight'){{ old('weight') }}@else{{ $item->weight }}@enderror"
+                                    class="form-control @error('weight') is-invalid @enderror" required>
+                                @error('weight')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
                             <div class="mb-3">
-                                <label for="life" class="form-label">Life</label>
+                                <label for="cost" class="form-label">Cost</label>
 
-                                <input type="text" id="life" name="life"
-                                    value="@error('life'){{ old('life') }}@else{{ $character->life }}@enderror"
-                                    class="form-control @error('life') is-invalid @enderror" required>
-                                @error('life')
+                                <input type="text" id="cost" name="cost"
+                                    value="@error('cost'){{ old('cost') }}@else{{ $item->cost }}@enderror"
+                                    class="form-control @error('cost') is-invalid @enderror" required>
+                                @error('cost')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -104,6 +104,7 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#delete_button">Delete</button>
+
                         </form>
                     </div>
                 </div>
@@ -119,11 +120,11 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Cliccando su confirm eliminerai {{$character->name}}. Sei sicuro?
+                            Cliccando su confirm eliminerai {{$item->name}}. Sei sicuro?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="{{ route('characters.destroy', $character->id) }}" method="POST">
+                            <form action="{{ route('admin.items.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Confirm</button>
@@ -132,7 +133,6 @@
                     </div>
                 </div>
             </div>
-
     </main>
 
 @endsection

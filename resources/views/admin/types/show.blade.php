@@ -11,7 +11,7 @@
                             {{ $type->name }}
                         </h1>
                         {{-- bottone di edit --}}
-                        <a href="{{route('types.edit', $type->id)}}">
+                        <a href="{{route('admin.types.edit', $type->id)}}">
                             <button class="btn btn-success rounded-3 border-0">
                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                             </button>

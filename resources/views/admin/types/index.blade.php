@@ -13,7 +13,7 @@
                     <h4>
                         Can't find your type?
                     </h4>
-                    <a href="{{route('types.create')}}">
+                    <a href="{{route('admin.types.create')}}">
                         <button class="btn btn-primary rounded-3 mx-4 ">
                             Add new one
                         </button>
@@ -34,14 +34,14 @@
                     <div class="card mb-3 ">
                         {{-- <img src="{{ $character->image }}" alt="{{ $character->name }}"> --}}
                         <div class="card-body h-100">
-                            <a href="{{route('types.show',$type->id)}}">
+                            <a href="{{route('admin.types.show',$type->id)}}">
                                 <h5>
                                     {{ $type->name }}
                                 </h5>
                             </a>
                             <div>{{ substr($type->description,0,100)."..." }}</div>
                             {{-- bottone di edit --}}
-                            <a href="{{route('types.edit', $type->id)}}">
+                            <a href="{{route('admin.types.edit', $type->id)}}">
                                 <button class="btn btn-success rounded-3 border-0 mt-2">
                                     <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                                 </button>

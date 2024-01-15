@@ -19,7 +19,7 @@
                     @endif
 
                     <div class="card p-2">
-                        <form action="{{ route('types.store') }}" method="POST">
+                        <form action="{{ route('admin.types.store') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
