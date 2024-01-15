@@ -40,9 +40,9 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $formData = $request->validated();
-        if ($request->hasFile('image')) {
-            $image = Storage::put('type_image', $formData['image']);
-            $formData['image'] = $image;
+        if ($request->hasFile('img')) {
+            $image = Storage::put('type_image', $formData['img']);
+            $formData['img'] = $image;
         }
         $newType = Type::create($formData);
 
@@ -85,12 +85,12 @@ class TypeController extends Controller
         $formData = $request->validated();
 
 
-        if ($request->hasFile('image')) {
-            if($type->image){
-                Storage::delete($type->image);
+        if ($request->hasFile('img')) {
+            if($type->img){
+                Storage::delete($type->img);
             }
-            $image = Storage::put('type_image', $formData['image']);
-            $formData['image'] = $image;
+            $image = Storage::put('type_image', $formData['img']);
+            $formData['img'] = $image;
         }
 
         $type->fill($formData);
@@ -109,8 +109,8 @@ class TypeController extends Controller
     public function destroy(Type $type)
     {
 
-        if($type->image){
-            Storage::delete($type->image);
+        if($type->img){
+            Storage::delete($type->img);
         }
         $type->delete();
 
