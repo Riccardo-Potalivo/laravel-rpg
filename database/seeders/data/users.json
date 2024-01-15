@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Prova",
+      "username": "Prova",
+      "email": "prova@prova.com",
+      "password": "12345678"
+    },
+    {
+      "name": "Alice Johnson",
+      "username": "alice_j",
+      "email": "alice@example.com",
+      "password": "password123"
+    },
+    {
+      "name": "Bob Smith",
+      "username": "bob_s",
+      "email": "bob@example.com",
+      "password": "securepass456"
+    },
+    {
+      "name": "Charlie Brown",
+      "username": "charlie_b",
+      "email": "charlie@example.com",
+      "password": "pass123word"
+    },
+    {
+      "name": "Diana Miller",
+      "username": "diana_m",
+      "email": "diana@example.com",
+      "password": "mysecretword"
+    },
+    {
+      "name": "Ethan Davis",
+      "username": "ethan_d",
+      "email": "ethan@example.com",
+      "password": "strongpassword789"
+    }
+]
