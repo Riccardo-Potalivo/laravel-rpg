@@ -22,8 +22,9 @@ class UserSeeder extends Seeder
         foreach ($users as $user) {
             $new_user = new User();
             $new_user->name = $user["name"];
-            $new_user->description = $user["email"];
-            $new_user->type_id = Hash::make($user["password"]);
+            $new_user->username = $user["username"];
+            $new_user->email = $user["email"];
+            $new_user->password = $user["password"];
             $new_user->save();
         }
     }
