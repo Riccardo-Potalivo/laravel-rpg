@@ -27,14 +27,17 @@ class StoreItemRequest extends FormRequest
             'name' => 'required| max:200',
             // 'description'=> 'nullable',
             'slug' => 'required| max:200',
-            'category'=>'required|max:100',
-            'type'=>'required|max:100',
-            'weight'=> 'required|max:10',
-            'cost'=> 'required|max:20',
+            'category' => 'required|max:100',
+            'type' => 'required|max:100',
+            'weight' => 'required|max:10',
+            'cost' => 'required|max:20',
+            'img' => 'nullable|image|max:1024'
+
 
         ];
     }
-    public function messages(){
+    public function messages()
+    {
 
         return [
             //
@@ -42,16 +45,18 @@ class StoreItemRequest extends FormRequest
             'name.required' => 'Il campo nome è richiesto',
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
             // 'description' => 'Il campo descrizione deve essere obbligatorio',
-            'slug.required'=>'Il campo slug deve essere obbligatorio',
-            'slug.max'=>'Il campo slug deve avere massimo :max caratteri',
-            'category.required'=>'Il campo categoria deve essere obbligatorio',
-            'category.max'=>'Il campo categoria deve avere massimo :max caratteri',
-            'type.required'=> 'Il campo tipo deve essere obbligatorio',
-            'type.max'=>'Il campo tipo deve avere massimo :max caratteri',
-            'weight.required'=> 'Il campo peso deve essere obbligatorio',
-            'weight.max'=>'Il campo peso deve avere massimo :max caratteri',
-            'cost.required'=> 'Il campo costo deve essere obbligatorio',
-            'cost.max'=>'Il campo costo deve avere massimo :max caratteri',
+            'slug.required' => 'Il campo slug deve essere obbligatorio',
+            'slug.max' => 'Il campo slug deve avere massimo :max caratteri',
+            'category.required' => 'Il campo categoria deve essere obbligatorio',
+            'category.max' => 'Il campo categoria deve avere massimo :max caratteri',
+            'type.required' => 'Il campo tipo deve essere obbligatorio',
+            'type.max' => 'Il campo tipo deve avere massimo :max caratteri',
+            'weight.required' => 'Il campo peso deve essere obbligatorio',
+            'weight.max' => 'Il campo peso deve avere massimo :max caratteri',
+            'cost.required' => 'Il campo costo deve essere obbligatorio',
+            'cost.max' => 'Il campo costo deve avere massimo :max caratteri',
+            "img.image" => 'Il file caricato deve essere di tipo image',
+            "img.max" => 'Il file caricato deve pesare massimo 1mb',
         ];
     }
 }

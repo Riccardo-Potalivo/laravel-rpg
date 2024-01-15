@@ -29,7 +29,8 @@ class StoreCharacterRequest extends FormRequest
             'attack' => 'required|numeric',
             'defence' => 'required|numeric',
             'speed' => 'required|numeric',
-            'life' => 'required|numeric'
+            'life' => 'required|numeric',
+            'img' => 'nullable|image|max:1024'
         ];
     }
 
@@ -50,7 +51,8 @@ class StoreCharacterRequest extends FormRequest
             'speed.numeric' => 'Il valore inserito deve essere un numero',
             'life.required' => 'Il campo valore vita deve essere obbligatorio',
             'life.numeric' => 'Il valore inserito deve essere un numero',
-
+            "img.image" => 'Il file caricato deve essere di tipo image',
+            "img.max" => 'Il file caricato deve pesare massimo 1mb',
         ];
     }
 }

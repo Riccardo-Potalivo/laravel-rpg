@@ -24,7 +24,9 @@ class UpdateTypeRequest extends FormRequest
         return [
             //
             'name' => 'required| max:200',
-            'description'=> 'nullable',
+            'description' => 'nullable',
+            'img' => 'nullable|image|max:1024'
+
         ];
     }
     public function messages(): array
@@ -33,6 +35,9 @@ class UpdateTypeRequest extends FormRequest
             //
             'name.required' => 'Il campo nome è richiesto',
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
+            "img.image" => 'Il file caricato deve essere di tipo image',
+            "img.max" => 'Il file caricato deve pesare massimo 1mb',
+
         ];
     }
 }
