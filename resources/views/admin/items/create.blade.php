@@ -30,27 +30,6 @@
                                 @enderror
                             </div>
 
-                            {{--
-                            <div class="mb-3">
-                                <label for="description" class="form-label" rows="10">Description</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
-                                    value="{{ old('description') }}">
-
-                                </textarea>
-                                @error('description')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div> --}}
-
-                            <div class="mb-3">
-                                <label for="slug" class="form-label">Slug</label>
-
-                                <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
-                                    class="form-control @error('slug') is-invalid @enderror">
-                                @error('slug')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
 
                             <div class="mb-3">
                                 <label for="category" class="form-label">Category</label>
