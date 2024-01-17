@@ -32,8 +32,9 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
                                         <div class="img-box">
-                                            @if ($character->image)
-                                                <img src="{{ $character->image }}" alt="{{ $character->name }}">
+                                            @if ($character->img)
+                                                <img src="{{ asset('storage/' . $character->img) }}"
+                                                    alt="{{ $character->name }}">
                                             @else
                                                 <div class="h-100 d-flex justify-content-center align-items-center">
                                                     <div class="text-uppercase ">No image</div>
