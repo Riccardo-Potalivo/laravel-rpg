@@ -12,7 +12,8 @@ return new class extends Migration {
     {
         Schema::table('characters', function (Blueprint $table) {
             //
-            $table->foreign('type_id')->references('id')->on('types')->nullOnDelete();
+            $table->unsignedBigInteger('type_id')->change();
+            $table->foreign('type_id')->references('id')->on('types')->cascadeOnDelete();
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration {
     {
         Schema::table('characters', function (Blueprint $table) {
             //
+            $table->tinyInteger('type_id')->change();
             $table->dropForeign('characters_type_id_foreign');
         });
     }
