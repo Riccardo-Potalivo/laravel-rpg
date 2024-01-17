@@ -68,7 +68,25 @@ body{
             background-color: $color-tertiary;
             margin-right: 20px;
             margin-bottom: 20px;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
 
+        }
+    }
+    #character-detail, #item-detail, #type-detail{
+        .img-box{
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+            background-color: $color-tertiary;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
 
         }
     }
