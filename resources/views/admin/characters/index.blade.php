@@ -56,10 +56,10 @@
                                     </div>
 
                                 </div>
-                                <div>{{ $character->description }}</div>
-                                <div>Type: {{ $character->description }}</div>
+                                <div>Type: {{ $character->type->name }}</div>
                                 <div>ATT:{{ $character->attack }} - DEF:{{ $character->defence }}</div>
                                 <div>SPEED:{{ $character->speed }} - LIFE: {{ $character->life }}</div>
+
 
 
                             </div>

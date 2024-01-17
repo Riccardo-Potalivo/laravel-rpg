@@ -37,15 +37,35 @@
                             <div class="mb-3">
                                 <label for="description" class="form-label" rows="10">Description</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">
-@error('description')
+                                @error('description')
 {{ old('description') }}@else{{ $character->description }}
 @enderror
-</textarea>
+                                </textarea>
                                 @error('description')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
+
+                            <div class="mb-3">
+                                <label for="type_id" class="form-label">Type</label>
+
+                                <select id="type_id" name="type_id"
+                                    class="form-select @error('type_id') is-invalid @enderror">
+                                    <option value="">Select a type</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{ $type->id }}"
+                                            {{ old('type_id', $character->type_id) == $type->id ? 'selected' : '' }}>
+                                            {{ $type->name }}
+                                        </option>
+                                    @endforeach
+
+                                </select>
+
+                                @error('category_id')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
                             <div class="mb-3">
                                 <label for="type_id" class="form-label">Type id</label>
 

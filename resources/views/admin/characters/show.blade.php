@@ -32,7 +32,7 @@
                     </div>
 
 
-                    <h4 class="text-uppercase me-3">Type: {{ $character->type_id }}</h4>
+                    <h4 class="text-uppercase me-3">Type: {{ $character->type->name }}</h4>
                     <div class="mb-3">ATT:{{ $character->attack }} - DEF:{{ $character->defence }}</div>
                     <div class="mb-3">SPEED:{{ $character->speed }} - LIFE: {{ $character->life }}</div>
                     <h4>Description</h4>
