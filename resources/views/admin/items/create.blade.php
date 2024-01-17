@@ -94,7 +94,7 @@
 
                             <div class="d-flex">
                                 <div class="me-3">
-                                    <img id="image-preview" width="100" src="https://via.placeholder.com/300x200">
+                                    <img id="preview-image" width="100" src="https://via.placeholder.com/300x200">
                                 </div>
                                 <div class="mb-3">
                                     <label for="image">Image</label>
