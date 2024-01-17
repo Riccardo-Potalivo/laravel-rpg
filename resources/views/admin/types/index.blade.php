@@ -30,8 +30,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
                                         <div class="img-box">
-                                            @if ($type->image)
-                                                <img src="{{ $type->image }}" alt="{{ $type->name }}">
+                                            @if ($type->img)
+                                                <img src="{{ asset('storage/' . $type->img) }}" alt="{{ $type->name }}">
                                             @else
                                                 <div class="h-100 d-flex justify-content-center align-items-center">
                                                     <div class="text-uppercase">No image</div>

@@ -8,8 +8,8 @@
 
                 <div class="col-12 col-xl-4 d-flex justify-content-center ">
                     <div class="img-box">
-                        @if ($character->image)
-                            <img src="{{ $character->image }}" alt="{{ $character->name }}">
+                        @if ($character->img)
+                            <img src="{{ asset('storage/' . $character->img) }}" alt="{{ $character->name }}">
                         @else
                             <div class="h-100 d-flex justify-content-center align-items-center">
                                 <div class="text-uppercase fs-4">No image</div>

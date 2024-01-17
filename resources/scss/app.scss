@@ -68,6 +68,8 @@ body{
             background-color: $color-tertiary;
             margin-right: 20px;
             margin-bottom: 20px;
+            overflow:hidden;
+
             img{
                 object-fit: cover;
                 object-position: center;
@@ -83,9 +85,13 @@ body{
             background-color: $color-tertiary;
             margin-right: 20px;
             margin-bottom: 20px;
+            overflow:hidden;
+
             img{
+                width:100%;
                 object-fit: cover;
                 object-position: center;
+
             }
 
         }

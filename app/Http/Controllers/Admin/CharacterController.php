@@ -40,9 +40,9 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
-        if ($request->hasFile('image')) {
-            $image = Storage::put('character_image', $formData['image']);
-            $formData['image'] = $image;
+        if ($request->hasFile('img')) {
+            $image = Storage::put('character_image', $formData['img']);
+            $formData['img'] = $image;
         }
 
         $newCharacter = Character::create($formData);
@@ -84,12 +84,12 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         $formData = $request->validated();
-        if ($request->hasFile('image')) {
-            if($character->image){
-                Storage::delete($character->image);
+        if ($request->hasFile('img')) {
+            if ($character->img) {
+                Storage::delete($character->img);
             }
-            $image = Storage::put('character_image', $formData['image']);
-            $formData['image'] = $image;
+            $image = Storage::put('character_image', $formData['img']);
+            $formData['img'] = $image;
         }
 
         $character->fill($formData);
@@ -107,7 +107,7 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
-        if($character->image){
+        if ($character->image) {
             Storage::delete($character->image);
         }
         $character->delete();

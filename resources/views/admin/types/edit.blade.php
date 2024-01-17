@@ -48,7 +48,7 @@
 
                             <div class="d-flex">
                                 <div class="media me-4">
-                                    <img class="shadow" width="150" src="{{ asset('storage/' . $type->image) }}"
+                                    <img class="shadow" width="150" src="{{ asset('storage/' . $type->img) }}"
                                         alt="{{ $type->title }}">
                                 </div>
                                 <div class="mb-3">

@@ -103,14 +103,14 @@
 
                             <div class="d-flex">
                                 <div class="media me-4">
-                                    <img class="shadow" width="150" src="{{ asset('storage/' . $character->image) }}"
+                                    <img class="shadow" width="150" src="{{ asset('storage/' . $character->img) }}"
                                         alt="{{ $character->title }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="image">Image</label>
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                        name="image" id="image" value="{{ old('image') }}">
-                                    @error('image')
+                                    <input type="file" class="form-control @error('img') is-invalid @enderror"
+                                        name="img" id="image" value="{{ old('img') }}">
+                                    @error('img')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

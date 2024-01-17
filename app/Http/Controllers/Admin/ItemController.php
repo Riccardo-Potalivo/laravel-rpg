@@ -39,9 +39,9 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
         $formData = $request->validated();
-        if ($request->hasFile('image')) {
-            $image = Storage::put('item_image', $formData['image']);
-            $formData['image'] = $image;
+        if ($request->hasFile('img')) {
+            $image = Storage::put('item_image', $formData['img']);
+            $formData['img'] = $image;
         }
 
 
@@ -84,12 +84,12 @@ class ItemController extends Controller
     public function update(UpdateItemRequest $request, Item $item)
     {
         $formData = $request->validated();
-        if ($request->hasFile('image')) {
-            if($item->image){
-                Storage::delete($item->image);
+        if ($request->hasFile('img')) {
+            if ($item->img) {
+                Storage::delete($item->img);
             }
-            $image = Storage::put('item_image', $formData['image']);
-            $formData['image'] = $image;
+            $image = Storage::put('item_image', $formData['img']);
+            $formData['img'] = $image;
         }
 
         $item->fill($formData);
@@ -107,7 +107,7 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        if($item->image){
+        if ($item->image) {
             Storage::delete($item->image);
         }
         $item->delete();
