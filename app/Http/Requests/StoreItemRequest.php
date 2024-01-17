@@ -25,8 +25,6 @@ class StoreItemRequest extends FormRequest
             //
 
             'name' => 'required| max:200',
-            // 'description'=> 'nullable',
-            'slug' => 'required| max:200',
             'category' => 'required|max:100',
             'type' => 'required|max:100',
             'weight' => 'required|max:10',
@@ -44,9 +42,6 @@ class StoreItemRequest extends FormRequest
 
             'name.required' => 'Il campo nome è richiesto',
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
-            // 'description' => 'Il campo descrizione deve essere obbligatorio',
-            'slug.required' => 'Il campo slug deve essere obbligatorio',
-            'slug.max' => 'Il campo slug deve avere massimo :max caratteri',
             'category.required' => 'Il campo categoria deve essere obbligatorio',
             'category.max' => 'Il campo categoria deve avere massimo :max caratteri',
             'type.required' => 'Il campo tipo deve essere obbligatorio',

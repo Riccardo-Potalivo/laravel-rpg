@@ -39,10 +39,15 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
         $formData = $request->validated();
+
         if ($request->hasFile('img')) {
             $image = Storage::put('item_image', $formData['img']);
             $formData['img'] = $image;
         }
+        $slug = Item::getSlug($formData['name']);
+
+
+        $formData['slug'] = $slug;
 
 
         $newItem = Item::create($formData);
@@ -84,6 +89,14 @@ class ItemController extends Controller
     public function update(UpdateItemRequest $request, Item $item)
     {
         $formData = $request->validated();
+
+        $formData['slug'] = $item->slug;
+        if ($item->name !== $formData['name']) {
+            $slug = Item::getSlug($formData['name']);
+            $formData['slug'] = $slug;
+
+        }
+
         if ($request->hasFile('img')) {
             if ($item->img) {
                 Storage::delete($item->img);
