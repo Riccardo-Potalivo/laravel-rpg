@@ -28,6 +28,13 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
                                         <div class="img-box">
+                                            @if ($item->image)
+                                                <img src="{{ $item->image }}" alt="{{ $item->name }}">
+                                            @else
+                                                <div class="h-100 d-flex justify-content-center align-items-center">
+                                                    <div class="text-uppercase">No image</div>
+                                                </div>
+                                            @endif
                                         </div>
                                         <h5>
                                             <a href="{{ route('admin.items.show', $item->id) }}">

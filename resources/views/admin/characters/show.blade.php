@@ -6,28 +6,38 @@
 
             <div class="row pt-5">
 
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-xl-4 d-flex justify-content-center ">
                     <div class="img-box">
-                        {{-- <img src="{{ $character->image }}" alt="{{ $character->name }}"> --}}
+                        @if ($character->image)
+                            <img src="{{ $character->image }}" alt="{{ $character->name }}">
+                        @else
+                            <div class="h-100 d-flex justify-content-center align-items-center">
+                                <div class="text-uppercase fs-4">No image</div>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-8">
-                    <div class="d-flex align-items-center">
+                <div class="col-12 col-xl-8 ">
+                    <div class="d-flex align-items-center justify-content-between ">
                         <h1>{{ $character->name }}</h1>
+
                         {{-- bottone di edit --}}
-                        <a href="{{route('admin.characters.edit', $character->id)}}">
-                            <button class="btn btn-success rounded-3 border-0 mx-5">
+                        <a href="{{ route('admin.characters.edit', $character->id) }}">
+                            <button class="btn edit rounded-3 border-0 mx-5">
                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
+                                <span>Edit Character</span>
                             </button>
                         </a>
                     </div>
+
 
                     <h4 class="text-uppercase me-3">Type: {{ $character->type_id }}</h4>
                     <div class="mb-3">ATT:{{ $character->attack }} - DEF:{{ $character->defence }}</div>
                     <div class="mb-3">SPEED:{{ $character->speed }} - LIFE: {{ $character->life }}</div>
                     <h4>Description</h4>
                     <p class="mb-3">{{ $character->description }}</p>
+
 
 
                 </div>
