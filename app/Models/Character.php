@@ -19,4 +19,9 @@ class Character extends Model
     {
         return $this->belongsToMany(Item::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

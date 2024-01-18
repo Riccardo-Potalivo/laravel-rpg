@@ -18,6 +18,11 @@ class Item extends Model
         return $this->belongsToMany(Character::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public static function getSlug($name)
     {
         $slug = Str::of($name)->slug('-');

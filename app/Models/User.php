@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Character;
+use App\Models\Item;
+use App\Models\Type;
+
 
 class User extends Authenticatable
 {
@@ -43,4 +47,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function characters()
+    {
+        return $this->hasMany(Character::class);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function types()
+    {
+        return $this->hasMany(Type::class);
+    }
 }
