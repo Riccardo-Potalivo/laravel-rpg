@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('character_item', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('character_id');
-            $table->foreign('character_id')->references('id')->on('characters')->nullOnDelete();
+            $table->foreign('character_id')->references('id')->on('characters')->cascadeOnDelete();
 
             $table->unsignedBigInteger('item_id');
-            $table->foreign('item_id')->references('id')->on('items')->nullOnDelete();
+            $table->foreign('item_id')->references('id')->on('items')->cascadeOnDelete();
         });
     }
 
