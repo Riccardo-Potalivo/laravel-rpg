@@ -65,7 +65,6 @@
                             </div>
 
                             <div class="mb-3">
-
                                 <div class="form-group">
                                     <label>Select Item</label>
                                     @foreach ($items as $item)
@@ -83,7 +82,6 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-
                             </div>
 
                             <div class="mb-3">

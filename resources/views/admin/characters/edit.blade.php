@@ -66,6 +66,29 @@
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
+
+
+                            <div class="mb-3">
+                                <div class="form-group">
+                                    <label>Select Item</label>
+                                    @foreach ($items as $item)
+                                        <div class="form-check @error('items') is-invalid @enderror">
+                                            <input type="checkbox" class="form-check-input" name="items[]"
+                                                value="{{ $item->id }}"
+                                                @if ($errors->any()) {{ in_array($item->id, old('items', $character->items)) ? 'checked' : '' }}>
+                                                @else
+                                                {{ $character->items->contains($item->id) ? 'checked' : '' }}> @endif
+                                                <label class="form-check-label">
+                                            {{ $item->name }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                    @error('items')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="type_id" class="form-label">Type id</label>
 
