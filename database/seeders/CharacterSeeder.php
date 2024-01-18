@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Character;
+use App\Models\Item;
 
 class CharacterSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class CharacterSeeder extends Seeder
     {
         $json = file_get_contents(__DIR__ . '/data/characters.json');
         $data = json_decode($json, true);
+        $items = Item::all();
 
         foreach ($data as $item) {
             $new_character = new Character();
@@ -25,7 +27,9 @@ class CharacterSeeder extends Seeder
             $new_character->defence = $item["defence"];
             $new_character->speed = $item["speed"];
             $new_character->life = $item["life"];
+
             $new_character->save();
+            $new_character->items()->sync($items->pluck('id')->random(2));
         }
 
     }
