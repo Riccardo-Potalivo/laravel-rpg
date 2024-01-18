@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
@@ -48,7 +49,7 @@ class ItemController extends Controller
 
         $formData['slug'] = $slug;
 
-        $userId = auth()->id();
+        $userId = Auth::id();
         $formData['user_id'] = $userId;
 
         $newItem = Item::create($formData);

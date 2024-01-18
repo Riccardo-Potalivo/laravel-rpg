@@ -8,6 +8,7 @@ use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 class TypeController extends Controller
@@ -45,7 +46,7 @@ class TypeController extends Controller
             $formData['img'] = $image;
         }
 
-        $userId = auth()->id();
+        $userId = Auth::id();
         $formData['user_id'] = $userId;
 
         $newType = Type::create($formData);

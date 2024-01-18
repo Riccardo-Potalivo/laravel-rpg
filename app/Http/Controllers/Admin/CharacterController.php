@@ -10,6 +10,7 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class CharacterController extends Controller
 {
@@ -50,7 +51,7 @@ class CharacterController extends Controller
             $formData['img'] = $image;
         }
 
-        $userId = auth()->id();
+        $userId = Auth::id();
         $formData['user_id'] = $userId;
 
         $newCharacter = Character::create($formData);
