@@ -19,7 +19,7 @@
                     @endif
 
                     <div class="card p-2">
-                        <form action="{{ route('admin.characters.update', $character->id) }}" method="POST"
+                        <form action="{{ route('admin.characters.update', $character->slug) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -172,7 +172,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="{{ route('admin.characters.destroy', $character->id) }}" method="POST">
+                            <form action="{{ route('admin.characters.destroy', $character->slug) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Confirm</button>

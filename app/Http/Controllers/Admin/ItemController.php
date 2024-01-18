@@ -52,7 +52,7 @@ class ItemController extends Controller
 
         $newItem = Item::create($formData);
 
-        return to_route('admin.items.show', $newItem->id);
+        return to_route('admin.items.show', $newItem->slug);
     }
 
     /**
@@ -109,7 +109,7 @@ class ItemController extends Controller
 
         $item->update();
 
-        return to_route('admin.items.show', $item->id);
+        return to_route('admin.items.show', $item->slug);
     }
 
     /**

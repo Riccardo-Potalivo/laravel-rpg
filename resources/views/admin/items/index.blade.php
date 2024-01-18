@@ -37,7 +37,7 @@
                                             @endif
                                         </div>
                                         <h5>
-                                            <a href="{{ route('admin.items.show', $item->id) }}">
+                                            <a href="{{ route('admin.items.show', $item->slug) }}">
                                                 {{ $item->name }}
                                             </a>
                                         </h5>

@@ -10,6 +10,8 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
 
 class CharacterController extends Controller
 {
@@ -45,18 +47,23 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
+
+        // $slug = Str::slug($formData['name'] . '-');
+        // $formData['slug'] = $slug;
+
         if ($request->hasFile('img')) {
             $image = Storage::put('character_image', $formData['img']);
             $formData['img'] = $image;
         }
 
+        // dd($formData);
         $newCharacter = Character::create($formData);
 
         if ($request->has('items')) {
             $newCharacter->items()->attach($request->items);
         }
 
-        return to_route('admin.characters.show', $newCharacter->id);
+        return to_route('admin.characters.show', $newCharacter->slug);
     }
 
     /**
@@ -96,6 +103,10 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         $formData = $request->validated();
+
+        $slug = Str::slug($formData['name'] . '-');
+        $formData['slug'] = $slug;
+
         if ($request->hasFile('img')) {
             if ($character->img) {
                 Storage::delete($character->img);
@@ -114,7 +125,7 @@ class CharacterController extends Controller
             $character->items()->detach();
         }
 
-        return to_route('admin.characters.show', $character->id);
+        return to_route('admin.characters.show', $character->slug);
     }
 
     /**

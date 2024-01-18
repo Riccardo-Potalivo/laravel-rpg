@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Character;
 use App\Models\Item;
+use Illuminate\Support\Str;
 
 class CharacterSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class CharacterSeeder extends Seeder
         foreach ($data as $item) {
             $new_character = new Character();
             $new_character->name = $item["name"];
+            $new_character->slug = Str::slug($item['name'] . '-');
             $new_character->description = $item["description"];
             $new_character->type_id = $item["type_id"];
             $new_character->attack = $item["attack"];
