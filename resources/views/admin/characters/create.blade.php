@@ -78,6 +78,10 @@
                                             </label>
                                         </div>
                                     @endforeach
+
+                                    @error('items')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                             </div>
