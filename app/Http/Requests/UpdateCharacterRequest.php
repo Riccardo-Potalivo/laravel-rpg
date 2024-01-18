@@ -25,12 +25,14 @@ class UpdateCharacterRequest extends FormRequest
 
             'name' => 'required| max:200',
             'description' => 'nullable',
-            'type_id' => 'required|numeric',
+            'type_id' => 'required|exists:types,id',
+            'item_id' => 'required|exists:items,id',
             'attack' => 'required|numeric',
             'defence' => 'required|numeric',
             'speed' => 'required|numeric',
             'life' => 'required|numeric',
-            'img' => 'nullable|image|max:1024'
+            'img' => 'nullable|image|max:1024',
+
         ];
     }
     public function messages()
@@ -41,7 +43,7 @@ class UpdateCharacterRequest extends FormRequest
             'name.required' => 'Il campo nome è richiesto',
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
             'type_id.required' => 'Il campo type_id deve essere obbligatorio',
-            'type_id.numeric' => 'Il valore inserito deve essere un numero',
+            'item_id.required' => 'Il campo item_id deve essere obbligatorio',
             'attack.required' => 'Il campo attacco deve essere obbligatorio',
             'attack.numeric' => 'Il valore inserito deve essere un numero',
             'defence.required' => 'Il campo difesa deve essere obbligatorio',
@@ -52,6 +54,7 @@ class UpdateCharacterRequest extends FormRequest
             'life.numeric' => 'Il valore inserito deve essere un numero',
             "img.image" => 'Il file caricato deve essere di tipo image',
             "img.max" => 'Il file caricato deve pesare massimo 1mb',
+
 
 
         ];
