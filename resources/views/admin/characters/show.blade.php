@@ -35,7 +35,20 @@
                     <h4 class="text-uppercase me-3">Type: {{ $character->type->name }}</h4>
                     <div class="mb-3">ATT:{{ $character->attack }} - DEF:{{ $character->defence }}</div>
                     <div class="mb-3">SPEED:{{ $character->speed }} - LIFE: {{ $character->life }}</div>
-                    <h4>Description</h4>
+
+                    <h5>Items:</h5>
+                    <ul class="mb-3">
+                        @if ($character->items)
+                            @foreach ($character->items as $item)
+                                <li>
+                                    {{ $item->name }}
+
+                                </li>
+                            @endforeach
+                        @endif
+                    </ul>
+
+                    <h4>Description:</h4>
                     <p class="mb-3">{{ $character->description }}</p>
 
 
