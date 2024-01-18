@@ -13,6 +13,11 @@ class Item extends Model
 
     protected $fillable = ['name', 'slug', 'category', 'type', 'weight', 'cost', 'img'];
 
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
+
     public static function getSlug($name)
     {
         $slug = Str::of($name)->slug('-');
