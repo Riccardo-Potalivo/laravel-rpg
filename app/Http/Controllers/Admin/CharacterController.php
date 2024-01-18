@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Character;
 use App\Models\Type;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
@@ -29,7 +30,9 @@ class CharacterController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.characters.create', compact('types'));
+        $items = Item::all();
+
+        return view('admin.characters.create', compact('types', 'items'));
 
     }
 
@@ -48,6 +51,10 @@ class CharacterController extends Controller
         }
 
         $newCharacter = Character::create($formData);
+
+        if ($request->has('items')) {
+            $newCharacter->items()->attach($request->items);
+        }
 
         return to_route('admin.characters.show', $newCharacter->id);
     }
