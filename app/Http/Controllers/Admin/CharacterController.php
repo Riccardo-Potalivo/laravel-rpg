@@ -50,6 +50,9 @@ class CharacterController extends Controller
             $formData['img'] = $image;
         }
 
+        $userId = auth()->id();
+        $formData['user_id'] = $userId;
+
         $newCharacter = Character::create($formData);
 
         if ($request->has('items')) {
@@ -103,6 +106,8 @@ class CharacterController extends Controller
             $image = Storage::put('character_image', $formData['img']);
             $formData['img'] = $image;
         }
+        $formData['user_id'] = $character->user_id;
+
 
         $character->fill($formData);
 

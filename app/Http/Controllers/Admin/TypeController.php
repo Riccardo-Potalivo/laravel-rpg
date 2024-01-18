@@ -44,6 +44,10 @@ class TypeController extends Controller
             $image = Storage::put('type_image', $formData['img']);
             $formData['img'] = $image;
         }
+
+        $userId = auth()->id();
+        $formData['user_id'] = $userId;
+
         $newType = Type::create($formData);
 
         return to_route('admin.types.show', $newType->id);
@@ -86,12 +90,13 @@ class TypeController extends Controller
 
 
         if ($request->hasFile('img')) {
-            if($type->img){
+            if ($type->img) {
                 Storage::delete($type->img);
             }
             $image = Storage::put('type_image', $formData['img']);
             $formData['img'] = $image;
         }
+        $formData['user_id'] = $type->user_id;
 
         $type->fill($formData);
 
@@ -109,7 +114,7 @@ class TypeController extends Controller
     public function destroy(Type $type)
     {
 
-        if($type->img){
+        if ($type->img) {
             Storage::delete($type->img);
         }
         $type->delete();

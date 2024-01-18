@@ -46,9 +46,10 @@ class ItemController extends Controller
         }
         $slug = Item::getSlug($formData['name']);
 
-
         $formData['slug'] = $slug;
 
+        $userId = auth()->id();
+        $formData['user_id'] = $userId;
 
         $newItem = Item::create($formData);
 
@@ -104,6 +105,7 @@ class ItemController extends Controller
             $image = Storage::put('item_image', $formData['img']);
             $formData['img'] = $image;
         }
+        $formData['user_id'] = $item->user_id;
 
         $item->fill($formData);
 
