@@ -90,17 +90,6 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="type_id" class="form-label">Type id</label>
-
-                                <input type="text" id="type_id" name="type_id"
-                                    value="@error('type_id'){{ old('type_id') }}@else{{ $character->type_id }}@enderror"
-                                    class="form-control @error('type_id') is-invalid @enderror" required>
-                                @error('type_id')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3">
                                 <label for="attack" class="form-label">Attack</label>
 
                                 <input type="text" id="attack" name="attack"
