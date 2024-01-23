@@ -38,7 +38,7 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        <a href="{{ route('admin.types.show', $type->id) }}">
+                                        <a href="{{ route('admin.types.show', $type->slug) }}">
                                             <h5>
                                                 {{ $type->name }}
                                             </h5>
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="d-flex mt-2">
                                         {{-- bottone di edit --}}
-                                        <a href="{{ route('admin.types.edit', $type->id) }}">
+                                        <a href="{{ route('admin.types.edit', $type->slug) }}">
                                             <button class="btn edit rounded-3 border-0">
                                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                                             </button>

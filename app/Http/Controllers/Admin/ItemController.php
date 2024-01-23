@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateItemRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ItemController extends Controller
 {
@@ -41,6 +42,9 @@ class ItemController extends Controller
     {
         $formData = $request->validated();
 
+        $slug = Str::slug($formData['name'] . '-');
+        $formData['slug'] = $slug;
+
         if ($request->hasFile('img')) {
             $image = Storage::put('item_image', $formData['img']);
             $formData['img'] = $image;
@@ -54,7 +58,7 @@ class ItemController extends Controller
 
         $newItem = Item::create($formData);
 
-        return to_route('admin.items.show', $newItem->id);
+        return to_route('admin.items.show', $newItem->slug);
     }
 
     /**
@@ -94,9 +98,8 @@ class ItemController extends Controller
 
         $formData['slug'] = $item->slug;
         if ($item->name !== $formData['name']) {
-            $slug = Item::getSlug($formData['name']);
+            $slug = Str::slug($formData['name'] . '-');
             $formData['slug'] = $slug;
-
         }
 
         if ($request->hasFile('img')) {
@@ -112,7 +115,7 @@ class ItemController extends Controller
 
         $item->update();
 
-        return to_route('admin.items.show', $item->id);
+        return to_route('admin.items.show', $item->slug);
     }
 
     /**

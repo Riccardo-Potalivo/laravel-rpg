@@ -11,6 +11,7 @@ use App\Http\Requests\UpdateCharacterRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class CharacterController extends Controller
 {
@@ -46,6 +47,10 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
+
+        $slug = Str::slug($formData['name'] . '-');
+        $formData['slug'] = $slug;
+
         if ($request->hasFile('img')) {
             $image = Storage::put('character_image', $formData['img']);
             $formData['img'] = $image;
@@ -54,13 +59,14 @@ class CharacterController extends Controller
         $userId = Auth::id();
         $formData['user_id'] = $userId;
 
+        // dd($formData);
         $newCharacter = Character::create($formData);
 
         if ($request->has('items')) {
             $newCharacter->items()->attach($request->items);
         }
 
-        return to_route('admin.characters.show', $newCharacter->id);
+        return to_route('admin.characters.show', $newCharacter->slug);
     }
 
     /**
@@ -100,6 +106,13 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         $formData = $request->validated();
+
+        $formData['slug'] = $character->slug;
+        if ($character->name !== $formData['name']) {
+            $slug = Str::slug($formData['name'] . '-');
+            $formData['slug'] = $slug;
+        }
+
         if ($request->hasFile('img')) {
             if ($character->img) {
                 Storage::delete($character->img);
@@ -107,8 +120,8 @@ class CharacterController extends Controller
             $image = Storage::put('character_image', $formData['img']);
             $formData['img'] = $image;
         }
-        $formData['user_id'] = $character->user_id;
 
+        $formData['user_id'] = $character->user_id;
 
         $character->fill($formData);
 
@@ -120,7 +133,7 @@ class CharacterController extends Controller
             $character->items()->detach();
         }
 
-        return to_route('admin.characters.show', $character->id);
+        return to_route('admin.characters.show', $character->slug);
     }
 
     /**

@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
 
 
 class TypeController extends Controller
@@ -41,6 +43,10 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $formData = $request->validated();
+
+        $slug = Str::slug($formData['name'] . '-');
+        $formData['slug'] = $slug;
+
         if ($request->hasFile('img')) {
             $image = Storage::put('type_image', $formData['img']);
             $formData['img'] = $image;
@@ -51,7 +57,7 @@ class TypeController extends Controller
 
         $newType = Type::create($formData);
 
-        return to_route('admin.types.show', $newType->id);
+        return to_route('admin.types.show', $newType->slug);
     }
 
     /**
@@ -89,6 +95,11 @@ class TypeController extends Controller
     {
         $formData = $request->validated();
 
+        $formData['slug'] = $type->slug;
+        if ($type->name !== $formData['name']) {
+            $slug = Str::slug($formData['name'] . '-');
+            $formData['slug'] = $slug;
+        }
 
         if ($request->hasFile('img')) {
             if ($type->img) {
@@ -103,7 +114,7 @@ class TypeController extends Controller
 
         $type->update();
 
-        return to_route('admin.types.show', $type->id);
+        return to_route('admin.types.show', $type->slug);
     }
 
     /**

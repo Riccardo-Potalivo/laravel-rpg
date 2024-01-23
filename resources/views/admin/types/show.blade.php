@@ -23,7 +23,7 @@
                             {{ $type->name }}
                         </h1>
                         {{-- bottone di edit --}}
-                        <a href="{{ route('admin.types.edit', $type->id) }}">
+                        <a href="{{ route('admin.types.edit', $type->slug) }}">
                             <button class="btn edit rounded-3 border-0 mx-5">
                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                                 <span>Edit Type</span>
