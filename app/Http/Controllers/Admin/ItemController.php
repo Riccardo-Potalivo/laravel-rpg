@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateItemRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ItemController extends Controller
 {
@@ -40,6 +41,9 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
         $formData = $request->validated();
+
+        $slug = Str::slug($formData['name'] . '-');
+        $formData['slug'] = $slug;
 
         if ($request->hasFile('img')) {
             $image = Storage::put('item_image', $formData['img']);
@@ -94,9 +98,8 @@ class ItemController extends Controller
 
         $formData['slug'] = $item->slug;
         if ($item->name !== $formData['name']) {
-            $slug = Item::getSlug($formData['name']);
+            $slug = Str::slug($formData['name'] . '-');
             $formData['slug'] = $slug;
-
         }
 
         if ($request->hasFile('img')) {

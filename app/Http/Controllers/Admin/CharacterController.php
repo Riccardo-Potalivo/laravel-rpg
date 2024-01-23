@@ -10,12 +10,8 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
-=======
 use Illuminate\Support\Str;
-
->>>>>>> change-url-id-to-slug
 
 class CharacterController extends Controller
 {
@@ -52,21 +48,18 @@ class CharacterController extends Controller
     {
         $formData = $request->validated();
 
-        // $slug = Str::slug($formData['name'] . '-');
-        // $formData['slug'] = $slug;
+        $slug = Str::slug($formData['name'] . '-');
+        $formData['slug'] = $slug;
 
         if ($request->hasFile('img')) {
             $image = Storage::put('character_image', $formData['img']);
             $formData['img'] = $image;
         }
 
-<<<<<<< HEAD
         $userId = Auth::id();
         $formData['user_id'] = $userId;
 
-=======
         // dd($formData);
->>>>>>> change-url-id-to-slug
         $newCharacter = Character::create($formData);
 
         if ($request->has('items')) {
@@ -114,8 +107,11 @@ class CharacterController extends Controller
     {
         $formData = $request->validated();
 
-        $slug = Str::slug($formData['name'] . '-');
-        $formData['slug'] = $slug;
+        $formData['slug'] = $character->slug;
+        if ($character->name !== $formData['name']) {
+            $slug = Str::slug($formData['name'] . '-');
+            $formData['slug'] = $slug;
+        }
 
         if ($request->hasFile('img')) {
             if ($character->img) {
@@ -124,8 +120,8 @@ class CharacterController extends Controller
             $image = Storage::put('character_image', $formData['img']);
             $formData['img'] = $image;
         }
-        $formData['user_id'] = $character->user_id;
 
+        $formData['user_id'] = $character->user_id;
 
         $character->fill($formData);
 

@@ -33,10 +33,7 @@
 
                             <div class="mb-3">
                                 <label for="description" class="form-label" rows="10">Description</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
-                                    value="{{ old('description') }}">
-
-                                </textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{ old('description') }}</textarea>
                                 @error('description')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -44,7 +41,7 @@
 
 
                             <div class="mb-3">
-                                <label for="type_id" class="form-label">Type id</label>
+                                <label for="type_id" class="form-label">Type</label>
 
 
                                 <select id="type_id" name="type_id"

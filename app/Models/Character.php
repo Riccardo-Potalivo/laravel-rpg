@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Character extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'type_id', 'attack', 'defence', 'speed', 'life', 'img', 'user_id'];
+    protected $fillable = ['name', 'slug', 'description', 'type_id', 'attack', 'defence', 'speed', 'life', 'img', 'user_id'];
 
     public function type()
     {
