@@ -12,13 +12,11 @@ class ItemController extends Controller
     public function index(Request $request)
     {
 
-
-
         $items = Item::with(['characters'])->get();
         return response()->json(
             [
-                'success'=>true,
-                'results'=>$items
+                'success' => true,
+                'results' => $items
             ]
         );
     }
@@ -29,8 +27,8 @@ class ItemController extends Controller
         $item = Item::where('slug', $slug)->with(['characters'])->first();
         return response()->json(
             [
-                'success'=>true,
-                'results'=>$item
+                'success' => true,
+                'results' => $item
             ]
         );
     }
