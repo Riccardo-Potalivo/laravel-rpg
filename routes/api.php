@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\CharacterController;
-use App\Http\Controllers\Admin\TypeController;
-use App\Http\Controllers\Admin\ItemController;
+use App\Http\Controllers\Api\CharacterController;
+use App\Http\Controllers\Api\TypeController;
+use App\Http\Controllers\Api\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
