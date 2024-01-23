@@ -31,9 +31,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('items', ItemController::class);
-    Route::resource('types', TypeController::class);
-    Route::resource('characters', CharacterController::class);
+    Route::resource('items', ItemController::class)->parameters([
+        'items' => 'item:slug'
+    ]);
+    Route::resource('types', TypeController::class)->parameters([
+        'types' => 'type:slug'
+    ]);
+    Route::resource('characters', CharacterController::class)->parameters([
+        'characters' => 'character:slug'
+    ]);
 });
 
 

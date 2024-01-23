@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Item;
+use Illuminate\Support\Str;
 
 class ItemSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class ItemSeeder extends Seeder
             $item = new Item();
             $item->name = $itemData['name'];
             // $item->description = $itemData['description'];
-            $item->slug = $itemData['slug'];
+            $item->slug = Str::slug($itemData['name'] . '-');
             $item->category = $itemData['category'];
             $item->type = $itemData['type'];
             $item->weight = $itemData['weight'];

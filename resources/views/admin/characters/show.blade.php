@@ -23,7 +23,7 @@
                         <h1>{{ $character->name }}</h1>
 
                         {{-- bottone di edit --}}
-                        <a href="{{ route('admin.characters.edit', $character->id) }}">
+                        <a href="{{ route('admin.characters.edit', $character->slug) }}">
                             <button class="btn edit rounded-3 border-0 mx-5">
                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                                 <span>Edit Character</span>

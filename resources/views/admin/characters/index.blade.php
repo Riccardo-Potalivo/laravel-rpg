@@ -42,13 +42,13 @@
                                             @endif
                                         </div>
                                         <h5>
-                                            <a href="{{ route('admin.characters.show', $character->id) }}">{{ $character->name }}
+                                            <a href="{{ route('admin.characters.show', $character->slug) }}">{{ $character->name }}
                                             </a>
                                         </h5>
                                     </div>
                                     <div class="d-flex mt-2">
                                         {{-- bottone di edit --}}
-                                        <a href="{{ route('admin.characters.edit', $character->id) }}">
+                                        <a href="{{ route('admin.characters.edit', $character->slug) }}">
                                             <button class="btn edit rounded-3 border-0">
                                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                                             </button>
