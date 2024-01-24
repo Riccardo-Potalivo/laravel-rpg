@@ -2,6 +2,7 @@
     {
         "name": "Lancelot",
         "description": "Valiant knight with a noble heart",
+        "image": "characters/lancelot.jpg",
         "type_id": 1,
         "attack": 85,
         "defence": 75,
@@ -11,6 +12,7 @@
       {
         "name": "Morgana",
         "description": "Enchanting sorceress skilled in arcane arts",
+        "image": "characters/morgana.jpg",
         "type_id": 2,
         "attack": 70,
         "defence": 55,
@@ -20,6 +22,7 @@
       {
         "name": "Robin Hood",
         "description": "Legendary archer and defender of the poor",
+        "image": "characters/robin-hood.jpg",
         "type_id": 3,
         "attack": 75,
         "defence": 60,
@@ -29,6 +32,7 @@
       {
         "name": "Conan",
         "description": "Mighty barbarian wielding a massive sword",
+        "image": "characters/conan.jpg",
         "type_id": 4,
         "attack": 90,
         "defence": 70,
@@ -38,6 +42,7 @@
       {
         "name": "Silent Shadow",
         "description": "Stealthy assassin moving like a whisper",
+        "image": "characters/silent-shadow.jpg",
         "type_id": 5,
         "attack": 80,
         "defence": 50,
@@ -47,6 +52,7 @@
       {
         "name": "Sir Galahad",
         "description": "Chivalrous paladin dedicated to justice",
+        "image": "characters/sir-galahad.jpg",
         "type_id": 6,
         "attack": 85,
         "defence": 80,
@@ -56,6 +62,7 @@
       {
         "name": "Pyro Mage",
         "description": "Elementalist wielding the power of fire",
+        "image": "characters/pyro-mage.jpg",
         "type_id": 7,
         "attack": 75,
         "defence": 65,
@@ -65,6 +72,7 @@
       {
         "name": "Bardic Minstrel",
         "description": "Talented bard and musical virtuoso",
+        "image": "characters/bardic-minstrel.jpg",
         "type_id": 8,
         "attack": 65,
         "defence": 50,
@@ -74,6 +82,7 @@
       {
         "name": "Necro Lord",
         "description": "Master of the undead and dark arts",
+        "image": "characters/necro-lord.jpg",
         "type_id": 9,
         "attack": 80,
         "defence": 55,
@@ -83,6 +92,7 @@
       {
         "name": "Shadow Monk",
         "description": "Disciplined monk skilled in shadow combat",
+        "image": "characters/shadow-monk.jpg",
         "type_id": 10,
         "attack": 70,
         "defence": 65,
@@ -92,6 +102,7 @@
       {
         "name": "Hawkeye",
         "description": "Deadly sniper with unmatched accuracy",
+        "image": "characters/hawkeye.jpg",
         "type_id": 11,
         "attack": 85,
         "defence": 60,
@@ -101,6 +112,7 @@
       {
         "name": "Nature's Guardian",
         "description": "Druid protecting the balance of nature",
+        "image": "characters/nature-s-guardian.jpg",
         "type_id": 12,
         "attack": 75,
         "defence": 70,
@@ -110,6 +122,7 @@
       {
         "name": "Daring Swashbuckler",
         "description": "Acrobatic rogue daring in swordplay",
+        "image": "characters/daring-swashbuckler.jpg",
         "type_id": 1,
         "attack": 80,
         "defence": 55,
@@ -119,6 +132,7 @@
       {
         "name": "Inventor Tinker",
         "description": "Innovative tinkerer creating unique gadgets",
+        "image": "characters/inventor-thinker.jpg",
         "type_id": 2,
         "attack": 70,
         "defence": 65,
@@ -128,6 +142,7 @@
       {
         "name": "Dark Warlock",
         "description": "Cunning warlock manipulating dark forces",
+        "image": "characters/dark-warlock.jpg",
         "type_id": 3,
         "attack": 85,
         "defence": 50,
@@ -137,6 +152,7 @@
       {
         "name": "Potion Alchemist",
         "description": "Alchemy expert brewing potent potions",
+        "image": "characters/potion-alchemist.jpg",
         "type_id": 4,
         "attack": 75,
         "defence": 60,
@@ -146,6 +162,7 @@
       {
         "name": "Arena Gladiator",
         "description": "Fierce gladiator dominating the arena",
+        "image": "characters/arena-gladiator.jpg",
         "type_id": 5,
         "attack": 90,
         "defence": 70,
@@ -155,6 +172,7 @@
       {
         "name": "Arcane Archmage",
         "description": "Mystical archmage wielding powerful spells",
+        "image": "characters/arcane-archmage.jpg",
         "type_id": 6,
         "attack": 80,
         "defence": 75,
@@ -164,6 +182,7 @@
       {
         "name": "Sea Marauder",
         "description": "Dreaded marauder terrorizing the high seas",
+        "image": "characters/sea-marauder.jpg",
         "type_id": 7,
         "attack": 85,
         "defence": 60,
@@ -173,6 +192,7 @@
       {
         "name": "Swift Rogue",
         "description": "Agile rogue moving with lightning speed",
+        "image": "characters/swift-rogue.jpg",
         "type_id": 8,
         "attack": 75,
         "defence": 65,
@@ -182,6 +202,7 @@
       {
         "name": "Illusionist Trickster",
         "description": "Mysterious illusionist and master trickster",
+        "image": "characters/illusionist-trickster.jpg",
         "type_id": 9,
         "attack": 80,
         "defence": 55,
@@ -191,6 +212,7 @@
       {
         "name": "Secret Agent",
         "description": "Sly spy with a network of covert operations",
+        "image": "characters/secret-agent.jpg",
         "type_id": 10,
         "attack": 70,
         "defence": 50,
@@ -200,6 +222,7 @@
       {
         "name": "Warlord Commander",
         "description": "Tactical warlord leading armies to victory",
+        "image": "characters/warlord-commander.jpg",
         "type_id": 11,
         "attack": 85,
         "defence": 70,

@@ -46,7 +46,8 @@ class ItemController extends Controller
         $formData['slug'] = $slug;
 
         if ($request->hasFile('img')) {
-            $image = Storage::put('item_image', $formData['img']);
+            $name = Str::slug($formData['name'], '-') . '.jpg';
+            $image = Storage::putFileAs('items', $formData['img'], $name);
             $formData['img'] = $image;
         }
         $slug = Item::getSlug($formData['name']);
@@ -106,7 +107,8 @@ class ItemController extends Controller
             if ($item->img) {
                 Storage::delete($item->img);
             }
-            $image = Storage::put('item_image', $formData['img']);
+            $name = Str::slug($formData['name'], '-') . '.jpg';
+            $image = Storage::putFileAs('items', $formData['img'], $name);
             $formData['img'] = $image;
         }
         $formData['user_id'] = $item->user_id;

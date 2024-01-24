@@ -2,6 +2,7 @@
   {
     "name": "Club",
     "slug": "club",
+    "image": "items/club.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "2 lb.",
@@ -11,6 +12,7 @@
   {
     "name": "Dagger",
     "slug": "dagger",
+    "image": "items/dagger.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "1 lb.",
@@ -20,6 +22,7 @@
   {
     "name": "Greatclub",
     "slug": "greatclub",
+    "image": "items/greatclub.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "10 lb.",
@@ -29,6 +32,7 @@
   {
     "name": "Handaxe",
     "slug": "handaxe",
+    "image": "items/handaxe.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "2 lb.",
@@ -38,6 +42,7 @@
   {
     "name": "Javelin",
     "slug": "javelin",
+    "image": "items/javelin.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "2 lb.",
@@ -47,6 +52,7 @@
   {
     "name": "Light hammer",
     "slug": "light-hammer",
+    "image": "items/light-hammer.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "2 lb.",
@@ -56,6 +62,7 @@
   {
     "name": "Mace",
     "slug": "mace",
+    "image": "items/mace.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "4 lb.",
@@ -65,6 +72,7 @@
   {
     "name": "Quarterstaff",
     "slug": "quarterstaff",
+    "image": "items/quarterstaff.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "4 lb.",
@@ -74,6 +82,7 @@
   {
     "name": "Sickle",
     "slug": "sickle",
+    "image": "items/sickle.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "2 lb.",
@@ -83,6 +92,7 @@
   {
     "name": "Spear",
     "slug": "spear",
+    "image": "items/spear.jpg",
     "type": "Weapons",
     "category": "Simple Melee Weapons",
     "weight": "3 lb.",
@@ -92,6 +102,7 @@
   {
     "name": "Crossbow, light",
     "slug": "crossbow-light",
+    "image": "items/crossbow-light.jpg",
     "type": "Weapons",
     "category": "Simple Ranged Weapons",
     "weight": "5 lb.",
@@ -101,6 +112,7 @@
   {
     "name": "Dart",
     "slug": "dart",
+    "image": "items/dart.jpg",
     "type": "Weapons",
     "category": "Simple Ranged Weapons",
     "weight": "1/4 lb.",
@@ -110,6 +122,7 @@
   {
     "name": "Shortbow",
     "slug": "shortbow",
+    "image": "items/shortbow.jpg",
     "type": "Weapons",
     "category": "Simple Ranged Weapons",
     "weight": "2 lb.",
@@ -119,6 +132,7 @@
   {
     "name": "Sling",
     "slug": "sling",
+    "image": "items/sling.jpg",
     "type": "Weapons",
     "category": "Simple Ranged Weapons",
     "weight": "0 lb.",
@@ -128,6 +142,7 @@
   {
     "name": "Battleaxe",
     "slug": "battleaxe",
+    "image": "items/battleaxe.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "4 lb.",
@@ -137,6 +152,7 @@
   {
     "name": "Flail",
     "slug": "flail",
+    "image": "items/flail.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "2 lb.",
@@ -146,6 +162,7 @@
   {
     "name": "Glaive",
     "slug": "glaive",
+    "image": "items/glaive.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "6 lb.",
@@ -155,6 +172,7 @@
   {
     "name": "Greataxe",
     "slug": "greataxe",
+    "image": "items/greataxe.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "7 lb.",
@@ -164,6 +182,7 @@
   {
     "name": "Greatsword",
     "slug": "greatsword",
+    "image": "items/greatsword.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "6 lb.",
@@ -173,6 +192,7 @@
   {
     "name": "Halberd",
     "slug": "halberd",
+    "image": "items/halberd.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "6 lb.",
@@ -182,6 +202,7 @@
   {
     "name": "Lance",
     "slug": "lance",
+    "image": "items/lance.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "6 lb.",
@@ -191,6 +212,7 @@
   {
     "name": "Longsword",
     "slug": "longsword",
+    "image": "items/longsword.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "3 lb.",
@@ -200,6 +222,7 @@
   {
     "name": "Maul",
     "slug": "maul",
+    "image": "items/maul.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "10 lb.",
@@ -209,6 +232,7 @@
   {
     "name": "Morningstar",
     "slug": "morningstar",
+    "image": "items/morningstar.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "4 lb.",
@@ -218,6 +242,7 @@
   {
     "name": "Pike",
     "slug": "pike",
+    "image": "items/pike.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "18 lb.",
@@ -227,6 +252,7 @@
   {
     "name": "Rapier",
     "slug": "rapier",
+    "image": "items/rapier.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "2 lb.",
@@ -236,6 +262,7 @@
   {
     "name": "Scimitar",
     "slug": "scimitar",
+    "image": "items/scimitar.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "3 lb.",
@@ -245,6 +272,7 @@
   {
     "name": "Shortsword",
     "slug": "shortsword",
+    "image": "items/shortsword.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "2 lb.",
@@ -254,6 +282,7 @@
   {
     "name": "Trident",
     "slug": "trident",
+    "image": "items/trident.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "4 lb.",
@@ -263,6 +292,7 @@
   {
     "name": "War pick",
     "slug": "war-pick",
+    "image": "items/war-pick.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "2 lb.",
@@ -272,6 +302,7 @@
   {
     "name": "Warhammer",
     "slug": "warhammer",
+    "image": "items/warhammer.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "2 lb.",
@@ -281,6 +312,7 @@
   {
     "name": "Whip",
     "slug": "whip",
+    "image": "items/whip.jpg",
     "type": "Weapons",
     "category": "Martial Melee Weapons",
     "weight": "3 lb.",
@@ -290,6 +322,7 @@
   {
     "name": "Blowgun",
     "slug": "blowgun",
+    "image": "items/blowgun.jpg",
     "type": "Weapons",
     "category": "Martial Ranged Weapons",
     "weight": "1 lb.",
@@ -299,6 +332,7 @@
   {
     "name": "Crossbow, hand",
     "slug": "crossbow-hand",
+    "image": "items/crossbow-hand.jpg",
     "type": "Weapons",
     "category": "Martial Ranged Weapons",
     "weight": "3 lb.",
@@ -308,6 +342,7 @@
   {
     "name": "Crossbow, heavy",
     "slug": "crossbow-heavy",
+    "image": "items/crossbow-heavy.jpg",
     "type": "Weapons",
     "category": "Martial Ranged Weapons",
     "weight": "18 lb.",
@@ -317,6 +352,7 @@
   {
     "name": "Longbow",
     "slug": "longbow",
+    "image": "items/longbow.jpg",
     "type": "Weapons",
     "category": "Martial Ranged Weapons",
     "weight": "2 lb.",
@@ -326,6 +362,7 @@
   {
     "name": "Net",
     "slug": "net",
+    "image": "items/net.jpg",
     "type": "Weapons",
     "category": "Martial Ranged Weapons",
     "weight": "3 lb.",

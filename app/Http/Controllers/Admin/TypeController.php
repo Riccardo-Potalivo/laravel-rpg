@@ -48,7 +48,8 @@ class TypeController extends Controller
         $formData['slug'] = $slug;
 
         if ($request->hasFile('img')) {
-            $image = Storage::put('type_image', $formData['img']);
+            $name = Str::slug($formData['name'], '-') . '.jpg';
+            $image = Storage::putFileAs('types', $formData['img'], $name);
             $formData['img'] = $image;
         }
 
@@ -105,7 +106,8 @@ class TypeController extends Controller
             if ($type->img) {
                 Storage::delete($type->img);
             }
-            $image = Storage::put('type_image', $formData['img']);
+            $name = Str::slug($formData['name'], '-') . '.jpg';
+            $image = Storage::putFileAs('types', $formData['img'], $name);
             $formData['img'] = $image;
         }
         $formData['user_id'] = $type->user_id;

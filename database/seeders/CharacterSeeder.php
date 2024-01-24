@@ -23,6 +23,7 @@ class CharacterSeeder extends Seeder
             $new_character = new Character();
             $new_character->name = $item["name"];
             $new_character->slug = Str::slug($item['name'] . '-');
+            $new_character->img = $item["image"];
             $new_character->description = $item["description"];
             $new_character->type_id = $item["type_id"];
             $new_character->attack = $item["attack"];
