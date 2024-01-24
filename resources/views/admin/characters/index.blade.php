@@ -26,7 +26,6 @@
 
                         <div class="card">
 
-                            {{-- <img src="{{ $character->image }}" alt="{{ $character->name }}"> --}}
                             <div class="card-body h-100">
 
                                 <div class="d-flex justify-content-between">

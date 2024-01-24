@@ -22,6 +22,7 @@ class TypeSeeder extends Seeder
         foreach ($content as $value) {
             $newType = new Type();
             $newType->name = $value["name"];
+            $newType->img = $value["image"];
             $newType->slug = Str::slug($value['name'] . '-');
             $newType->description = $value["desc"];
             $newType->save();

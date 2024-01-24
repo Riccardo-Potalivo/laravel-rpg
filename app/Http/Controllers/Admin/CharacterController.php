@@ -51,8 +51,10 @@ class CharacterController extends Controller
         $slug = Str::slug($formData['name'] . '-');
         $formData['slug'] = $slug;
 
+
         if ($request->hasFile('img')) {
-            $image = Storage::put('character_image', $formData['img']);
+            $name = Str::slug($formData['name'], '-') . '.jpg';
+            $image = Storage::putFileAs('characters', $formData['img'], $name);
             $formData['img'] = $image;
         }
 
@@ -117,7 +119,8 @@ class CharacterController extends Controller
             if ($character->img) {
                 Storage::delete($character->img);
             }
-            $image = Storage::put('character_image', $formData['img']);
+            $name = Str::slug($formData['name'], '-') . '.jpg';
+            $image = Storage::putFileAs('characters', $formData['img'], $name);
             $formData['img'] = $image;
         }
 
