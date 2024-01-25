@@ -11,9 +11,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $characters= Character::simplePaginate(5);                        
-        $types = Type::simplePaginate(5);         
-        $items = Item::simplePaginate(5);
+        $characters= Character::paginate(5, ['*'], 'characters');                        
+        $types = Type::paginate(5, ['*'], 'types');         
+        $items = Item::paginate(5, ['*'], 'items');
         return view('home', compact('characters','items', 'types'));
     }
 }
