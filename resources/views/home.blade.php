@@ -49,17 +49,13 @@
                         @empty
                             <div>No categories</div>
                         @endforelse
-                    </tbody>
-                    <button class="page-link" ></button>
+                    </tbody>                     
                 </table>
-                <div class="p-2 vendor.pagination.bootstrap-5">
-                    
-
+                {{$characters->links('vendor.pagination.bootstrap-5')}}
                 </div>   
             </div>
-        </div>
-        </div>
-        <div class="col-12 col-md-6 mt-2">
+        </div>        
+        <div class="col-6 col-md-6 mt-2">
             <div class=" col-12 card h-100">
                 <div class="card-header">
                     <div class="py-1">
@@ -96,29 +92,11 @@
                             @endforelse
                         </tbody>
                     </table>
+                    {{$types->links('vendor.pagination.bootstrap-5')}}
                 </div>
             </div>
-            {{-- <table class="table">
-                <thead>
-                    <tr>
-                        <th>All Item</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            @foreach ($items as $item)
-                                <a href="{{ route('admin.items.show', $item->slug) }}">
-                                    <p class="text-uppercase text-black ">
-                                        {{ $item->name }}</p>
-                                </a>
-                            @endforeach
-                        </td>
-                    </tr>
-                </tbody>
-            </table> --}}
         </div>
-        <div class="col-12 col-md-6 mt-2">
+        <div class="col-6 col-md-6 mt-2">
             <div class=" col-12 card h-100">
                 <div class="card-header">
                     <div class="py-1">
@@ -154,28 +132,12 @@
                             @endforelse
                         </tbody>
                     </table>
+                    {{$items->links('vendor.pagination.bootstrap-5')}}
                 </div>
             </div>
-            {{-- <table class="table">
-                <thead>
-                    <tr>
-                        <th>All Item</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            @foreach ($items as $item)
-                                <a href="{{ route('admin.items.show', $item->slug) }}">
-                                    <p class="text-uppercase text-black ">
-                                        {{ $item->name }}</p>
-                                </a>
-                            @endforeach
-                        </td>
-                    </tr>
-                </tbody>
-            </table> --}}
-        </div>        
+          
+        </div>   
+    </div>     
     </section>
 </div>
 @endsection
