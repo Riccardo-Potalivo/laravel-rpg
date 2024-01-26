@@ -53,9 +53,10 @@
 
                                 </div>
 
-                                <div>{{ $item->slug }}</div>
-                                <div>Type: {{ $item->type }}
-                                    Category: {{ $item->category }}</div>
+                                {{-- <div>{{ $item->slug }}</div> --}}
+                                <div>Type: {{ $item->type }}</div>
+                                <div>Category: {{ $item->category }}</div>
+                                <div>Attack: {{ $item->attack }}</div>
                                 <div>Weight: {{ $item->weight }}</div>
                                 <div>Cost: {{ $item->cost }}</div>
 

@@ -25,6 +25,7 @@ class UpdateItemRequest extends FormRequest
             //
 
             'name' => 'required| max:200',
+            'attack' => 'required|numeric',
             'category' => 'required|max:100',
             'type' => 'required|max:100',
             'weight' => 'required|max:10',
@@ -41,6 +42,8 @@ class UpdateItemRequest extends FormRequest
 
             'name.required' => 'Il campo nome è richiesto',
             'name.max' => 'Il campo nome deve avere massimo :max caratteri',
+            'attack.required' => 'Il campo attacco deve essere obbligatorio',
+            'attack.numeric' => 'Il valore inserito deve essere un numero',
             'category.required' => 'Il campo categoria deve essere obbligatorio',
             'category.max' => 'Il campo categoria deve avere massimo :max caratteri',
             'type.required' => 'Il campo tipo deve essere obbligatorio',
