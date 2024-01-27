@@ -119,7 +119,37 @@ body{
 
 }
 
+.card{
+    background-color: $color-bg-tertiary;
+}
+th{
+   background-color: $color-tertiary;  
+}
+td{
+    background-color: $color-tertiary;   
+}
 
+a{
+    text-decoration: none;
+    color:black;
+}
+button{
+    background-color: $color-bg-edit;
+    &:hover{
+background-color: $color-bg-add;
+    }  
+}
+.page-item .page-link {  
+    background-color: $color-tertiary ;  
+    border-color: $color-tertiary;
+}
+.page-item.active .page-link {  
+    background-color: $color-bg-add ;  
+    border-color: $color-bg-add;
+}
+.text-pagination{
+   color: $color-bg-add;
+}
 }
 
 
