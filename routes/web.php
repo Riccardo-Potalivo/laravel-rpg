@@ -40,6 +40,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('characters', CharacterController::class)->parameters([
         'characters' => 'character:slug'
     ]);
+
 });
 
 
