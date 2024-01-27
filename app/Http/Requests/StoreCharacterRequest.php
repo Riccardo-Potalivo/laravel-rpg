@@ -26,7 +26,7 @@ class StoreCharacterRequest extends FormRequest
             'name' => 'required| max:200',
             'description' => 'nullable',
             'type_id' => 'required|exists:types,id',
-            'items' => 'nullable|exists:items,id',
+            'items' => 'nullable|exists:items,id|max:2',
             'attack' => 'required|numeric',
             'defence' => 'required|numeric',
             'speed' => 'required|numeric',
@@ -55,8 +55,7 @@ class StoreCharacterRequest extends FormRequest
             'life.numeric' => 'Il valore inserito deve essere un numero',
             "img.image" => 'Il file caricato deve essere di tipo image',
             "img.max" => 'Il file caricato deve pesare massimo 1mb',
-
-
+            "items.max" => 'puoi selezionare massimo :max elementi',
         ];
     }
 }

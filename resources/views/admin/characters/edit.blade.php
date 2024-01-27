@@ -79,7 +79,7 @@
                                                 @else
                                                 {{ $character->items->contains($item->id) ? 'checked' : '' }}> @endif
                                                 <label class="form-check-label">
-                                            {{ $item->name }}
+                                            {{ $item->name }}<small> (att: {{ $item->attack }})</small>
                                             </label>
                                         </div>
                                     @endforeach
