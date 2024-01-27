@@ -80,6 +80,12 @@
                                 {{ __('Items') }}
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteName() == 'admin.games.index' ? 'active' : '' }}"
+                                href="{{ route('admin.games.index') }}">
+                                {{ __('Games') }}
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

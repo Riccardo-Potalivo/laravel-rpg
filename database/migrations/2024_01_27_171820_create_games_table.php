@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('playerCountWin');
-            $table->bigInteger('computerCountWin');
+            $table->string('computerCountWin');
+            $table->string('playerCountWin');
             $table->timestamps();
         });
     }
