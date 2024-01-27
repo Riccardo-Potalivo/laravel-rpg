@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\TypeController;
 use App\Http\Controllers\Api\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::get('/types', [TypeController::class, 'index']);
 Route::get('/types/{slug}', [TypeController::class, 'show']);
 Route::get('/items', [ItemController::class, 'index']);
 Route::get('/items/{slug}', [ItemController::class, 'show']);
+
+Route::get('games', [GameController::class, 'index']);
+Route::post('games', [GameController::class, 'store']);
