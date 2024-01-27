@@ -29,5 +29,5 @@ Route::get('/types/{slug}', [TypeController::class, 'show']);
 Route::get('/items', [ItemController::class, 'index']);
 Route::get('/items/{slug}', [ItemController::class, 'show']);
 
-Route::get('games', [GameController::class, 'index']);
+Route::get('/games', [GameController::class, 'index']);
 Route::post('games', [GameController::class, 'store']);
