@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="d-flex mt-2">
                                         {{-- bottone di edit --}}
-                                        <a href="{{ route('admin.items.edit', $item->id) }}">
+                                        <a href="{{ route('admin.items.edit', $item->slug) }}">
                                             <button class="btn edit rounded-3 border-0">
                                                 <i class="fa-solid fa-pen" style="font-size: 0.7rem"></i>
                                             </button>

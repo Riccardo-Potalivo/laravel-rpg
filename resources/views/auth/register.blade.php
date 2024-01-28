@@ -5,7 +5,7 @@
 
         <div class="row justify-content-center">
             <div class="col-md-8 mb-3">
-                <h1>Register to access all sections of InclusiveRPG!</h1>
+                <h1 class="text-center">Register to access all sections of <br> Shadow's Justice Admin Page</h1>
             </div>
             <div class="col-md-8">
                 <div class="card">
