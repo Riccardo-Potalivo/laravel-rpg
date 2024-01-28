@@ -28,7 +28,12 @@ body{
     }
 
     .logo-wrapper {
-        width: 150px;
+        // width: 150px;
+        height: 70px;
+        img{
+
+            height: 100%;
+        }
     }
 
     nav.navbar{
@@ -43,9 +48,12 @@ body{
             }
         }
         .dropdown-menu{
-            background-color: $color-bg-edit;
+            background-color: $color-bg-tertiary;
             a{
             color: $color-white;
+            &:hover{
+                color: $color-bg-primary;
+            }
 
             }
         }
@@ -102,13 +110,13 @@ body{
         color: $color-white;
 
         &:hover{
-            background-color: $color-tertiary;
+            background-color: $color-bg-add;
         }
     }
     button.btn.add-btn{
-        background-color: $color-bg-add;
+        background-color: $color-bg-edit;
         &:hover{
-            background-color: $color-tertiary;
+            background-color: $color-bg-add;
 
             color: $color-white;
         }
@@ -123,10 +131,10 @@ body{
     background-color: $color-bg-tertiary;
 }
 th{
-   background-color: $color-tertiary;  
+   background-color: $color-tertiary;
 }
 td{
-    background-color: $color-tertiary;   
+    background-color: $color-tertiary;
 }
 
 a{
@@ -137,14 +145,14 @@ button{
     background-color: $color-bg-edit;
     &:hover{
 background-color: $color-bg-add;
-    }  
+    }
 }
-.page-item .page-link {  
-    background-color: $color-tertiary ;  
+.page-item .page-link {
+    background-color: $color-tertiary ;
     border-color: $color-tertiary;
 }
-.page-item.active .page-link {  
-    background-color: $color-bg-add ;  
+.page-item.active .page-link {
+    background-color: $color-bg-add ;
     border-color: $color-bg-add;
 }
 .text-pagination{

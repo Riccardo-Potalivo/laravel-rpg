@@ -1,19 +1,23 @@
 @extends('layouts.app')
 @section('content')
     @guest
-        <h1 class="text-center mt-5">Welcome to Inclusive RPG</h1>
+        <div class="text-center mt-5">
+            <h2>Welcome to your personal</h2>
+            <h1>Shadow's Justice <br> Admin Page</h1>
+        </div>
         <div class="container ">
             <div class="card d-flex justify-content-between align-content-between mt-5">
                 <div class="row">
                     <div class="col-6 d-flex flex-column p-4">
-                        <h3 class="text-center">Please Log in <br>to see all this page</h3>
+                        <h3 class="text-center">Please Login <br>to access all the funcionalities</h3>
                         <button class="btn m-auto"><a href="{{ route('login') }}" class="text-light">To Login</a></button>
                     </div>
                     <div class="col-6 d-flex flex-column p-4">
-                        <h3 class="text-center">Or you can still view <br>our
-                            product</h3>
-                            <button class="btn m-auto p-2"><a href="http://localhost:5174/" class="text-light">To Vue
-                                    RPG</a></button>
+                        <h3 class="text-center">Go to <br>
+                            Shadow's Justice Website
+                        </h3>
+                        <button class="btn m-auto p-2"><a href="http://localhost:5174/" class="text-light">To Shadow's
+                                Justice</a></button>
                     </div>
                 </div>
             </div>
