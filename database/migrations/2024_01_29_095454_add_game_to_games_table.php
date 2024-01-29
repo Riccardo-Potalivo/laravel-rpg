@@ -10,11 +10,8 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->id();
-            $table->string('computer_count_win');
-            $table->string('player_count_win');
-            $table->timestamps();
+        Schema::table('games', function (Blueprint $table) {
+            $table->string('game')->after('player_name');
         });
     }
 
@@ -23,6 +20,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('games');
+        Schema::table('games', function (Blueprint $table) {
+            $table->dropColumn('game');
+        });
     }
 };

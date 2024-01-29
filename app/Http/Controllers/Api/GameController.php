@@ -36,8 +36,11 @@ class GameController extends Controller
         //
         $data = $request->all();
         $validator = Validator::make($data, [
-            'computerCountWin' => 'required',
-            'playerCountWin' => 'required',
+            'computer_count_win' => 'required',
+            'player_count_win' => 'required',
+            'computer_name' => 'nullable',
+            'player_name' => 'nullable',
+            'game' => 'nullable',
         ]);
 
         if ($validator->fails()) {

@@ -13,16 +13,22 @@
                 <thead>
                     <tr>
                         <th scope="col">Time</th>
-                        <th scope="col">Computer wins</th>
+                        <th scope="col">Player character</th>
+                        <th scope="col">Computer character</th>
+                        <th scope="col">Game</th>
                         <th scope="col">Player wins</th>
+                        <th scope="col">Computer wins</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($games as $game)
                         <tr>
                             <td>{{ $game->created_at->diffForHumans() }}</td>
-                            <td>{{ $game->computerCountWin }}</td>
-                            <td>{{ $game->playerCountWin }}</td>
+                            <td>{{ $game->player_name }}</td>
+                            <td>{{ $game->computer_name }}</td>
+                            <td>{{ $game->game }}</td>
+                            <td>{{ $game->player_count_win }}</td>
+                            <td>{{ $game->computer_count_win }}</td>
                         </tr>
                     @endforeach
                 </tbody>
