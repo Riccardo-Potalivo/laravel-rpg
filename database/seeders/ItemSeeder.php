@@ -20,7 +20,7 @@ class ItemSeeder extends Seeder
         foreach ($items as $itemData) {
             $item = new Item();
             $item->name = $itemData['name'];
-            $item->attack = rand(1, 9);
+            $item->attack = rand(2, 9);
             $item->img = $itemData['image'];
             $item->slug = Str::slug($itemData['name'] . '-');
             $item->category = $itemData['category'];
